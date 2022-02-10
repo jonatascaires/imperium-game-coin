@@ -61,9 +61,9 @@ export default function Staking(props: StakingProps) {
 
   function renderCalendar() {
     const days = [15, 30, 90, 180, 360]
-    return days.map((d) => {
+    return days.map((d, key) => {
       return (
-        <CalendarBtn days={d} selected={daysSelected} setDaysSelected={setDaysSelected} />
+        <CalendarBtn days={d} selected={daysSelected} setDaysSelected={setDaysSelected} key={key} />
       )
     })
   }
