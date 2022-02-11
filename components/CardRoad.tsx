@@ -23,6 +23,19 @@ export default function CardRoad(props: CardRoadProps) {
   const [loadingWithdraw, setLoadingWithdraw] = useState(false)
   const [renderAgain, setRenderAgain] = useState(0)
 
+  const [loadingPage, setLoadingPage] = useState(true)
+
+  let imgTruck = '/game-img/silver-truck.svg'
+  if (name == 'Silver') {
+    imgTruck = `/game-img/silver-truck.svg`
+  } else
+    if (name == 'Gold') {
+      imgTruck = `/game-img/gold-truck.svg`
+    } else
+      if (name == 'Ruby') {
+        imgTruck = `/game-img/ruby-truck.svg`
+      }
+
   useEffect(() => {
     if (props.contract) {
       props.contract.methods.trucks(props.idTruck).call().then((result: any) => {
@@ -34,6 +47,7 @@ export default function CardRoad(props: CardRoadProps) {
         setWithdrawTime(parseInt(result.harvestTime + '000'))
 
         setLoadingWithdraw(false)
+        setLoadingPage(false)
       }).catch((err: string) => console.log(err))
     }
   }, [renderAgain])
@@ -143,6 +157,9 @@ export default function CardRoad(props: CardRoadProps) {
   const enableBtnWithdraw = withdrawTime > 0 ? new Date(Date.now()) > new Date(withdrawTime) : false
 
   return (
+    (loadingPage) ?
+    <ReactLoading type="spinningBubbles" width={25} className="-mb-9" />
+    :
     (!enableBtnToFuel && !enableBtnRepair) ?
       <>
         <div className="flex flex-col">
@@ -170,7 +187,7 @@ export default function CardRoad(props: CardRoadProps) {
                 </div>
                 :
                 <Image
-                  src={`/game-img/${name}-truck.svg`}
+                  src={imgTruck}
                   alt="icon-dashboard"
                   width={95}
                   height={95}

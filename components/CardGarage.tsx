@@ -24,6 +24,19 @@ export default function CardGarage(props: CardGarageProps) {
   const [loadingRepair, setLoadingRepair] = useState(false)
   const [renderAgain, setRenderAgain] = useState(0)
 
+  const [loadingPage, setLoadingPage] = useState(true)
+
+  let imgTruck = '/game-img/silver-truck.svg'
+  if (name == 'Silver') {
+    imgTruck = `/game-img/silver-truck.svg`
+  } else
+    if (name == 'Gold') {
+      imgTruck = `/game-img/gold-truck.svg`
+    } else
+      if (name == 'Ruby') {
+        imgTruck = `/game-img/ruby-truck.svg`
+      }
+
   useEffect(() => {
     if (props.contract) {
       props.contract.methods.trucks(props.idTruck).call().then((result: any) => {
@@ -35,6 +48,7 @@ export default function CardGarage(props: CardGarageProps) {
         setValue(result.value)
 
         setLoadingUpgrade(false)
+        setLoadingPage(false)
       }).catch((err: string) => console.log(err))
     }
   }, [renderAgain])
@@ -58,7 +72,6 @@ export default function CardGarage(props: CardGarageProps) {
   function toFuel(idTruck: number) {
     if (props.contract) {
       setLoadingFuel(true)
-      console.log(idTruck)
       props.contract.methods.reFuel(idTruck).send({ from: props.address }).then((resp: any) => {
         notify(resp.events.ReFuelEvent.returnValues.message, 'success')
         setLoadingFuel(false)
@@ -129,6 +142,9 @@ export default function CardGarage(props: CardGarageProps) {
   const enableBtnRepair = repairTime > 0 ? new Date(Date.now()) > new Date(repairTime) : false
 
   return (
+    (loadingPage) ?
+    <ReactLoading type="spinningBubbles" width={25} className="-mb-9" />
+    :
     (enableBtnToFuel || enableBtnRepair) ?
       <>
         <div className="bg-[#272727] bg-opacity-70 rounded-2xl w-[340px] h-[128px]
@@ -149,18 +165,18 @@ export default function CardGarage(props: CardGarageProps) {
               <div className={`flex items-center justify-center h-7 w-16 rounded-lg 
             bg-[#1C1C1C] border border-[#F4ED47] font-PassionOne text-lg cursor-pointer ${(!enableBtnToFuel || enableBtnRepair) && 'opacity-30 cursor-not-allowed'}`}
                 onClick={() => (enableBtnToFuel && !enableBtnRepair && !loadingFuel) && toFuel(props.idTruck)}>
-                {loadingFuel ? <ReactLoading type="bubbles" width={25} className="-mb-9" /> : 
-                (enableBtnToFuel && !enableBtnRepair) ?
-                <div className="flex items-center gap-1">
-                  <Image
-                    src={`/game-img/balance-diamond.svg`}
-                    alt="icon-dashboard"
-                    width={12}
-                    height={12}
-                  />
-                  <span className="text-sm">{50 * level}</span>
-                </div>
-                : 'Refuel'}
+                {loadingFuel ? <ReactLoading type="bubbles" width={25} className="-mb-9" /> :
+                  (enableBtnToFuel && !enableBtnRepair) ?
+                    <div className="flex items-center gap-1">
+                      <Image
+                        src={`/game-img/balance-diamond.svg`}
+                        alt="icon-dashboard"
+                        width={12}
+                        height={12}
+                      />
+                      <span className="text-sm">{50 * level}</span>
+                    </div>
+                    : 'Refuel'}
               </div>
             </div>
             <div className="flex items-center gap-2">
@@ -216,7 +232,7 @@ export default function CardGarage(props: CardGarageProps) {
               </div>
               :
               <Image
-                src={`/game-img/${name}-truck.svg`}
+                src={imgTruck}
                 alt="icon-dashboard"
                 width={100}
                 height={100}

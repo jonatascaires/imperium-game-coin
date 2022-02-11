@@ -21,9 +21,12 @@ export default function Staking(props: StakingProps) {
 
   const [totalLocked, setTotalLocked] = useState(0)
 
+  const [loadingPage, setLoadingPage] = useState(true)
+
   useEffect(() => {
     props.contract.methods.valueLocked().call().then((totalLocked: number) => {
       setTotalLocked(totalLocked / 100000000)
+      setLoadingPage(false)
     }).catch((err: string) => console.log(err))
   }, [renderAgainStaking])
 
@@ -80,7 +83,7 @@ export default function Staking(props: StakingProps) {
         </div>
         <div className="flex justify-center items-center h-10 bg-[#272727] font-PassionOne bg-opacity-70
               rounded-b-lg">
-          {totalLocked}
+          {loadingPage ? <ReactLoading type="bubbles" width={25} className="-mb-9" /> : totalLocked}
         </div>
       </div>
       <div>

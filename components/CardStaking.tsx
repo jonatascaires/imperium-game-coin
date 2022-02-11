@@ -21,6 +21,8 @@ export default function CardStaking(props: CardStakingProps) {
   const [loadingRescue, setLoadingRescue] = useState(false)
   const [renderAgainRescue, setRenderAgainRescue] = useState(0)
 
+  const [loadingPage, setLoadingPage] = useState(true)
+
   function StakingRescue(id: number) {
     if (props.contract) {
       setLoadingRescue(true)
@@ -42,6 +44,7 @@ export default function CardStaking(props: CardStakingProps) {
       setTimeLocked(parseInt(result.timeLocked + '000'))
       setApy(result.apy)
       setRescue(result.rescue)
+      setLoadingPage(false)
     }).catch((err: string) => console.log(err))
   }, [renderAgainRescue])
 
@@ -73,7 +76,13 @@ export default function CardStaking(props: CardStakingProps) {
 
   const enableBtnRescue = timeLocked > 0 ? new Date(Date.now()) > new Date(timeLocked) : false
 
-  if (rescue) {
+  if (loadingPage)
+    return (
+      <div className="flex justify-center items-center mt-3 gap-5 mx-2">
+        <ReactLoading type="bubbles" width={25} className="-mb-9" />
+      </div>
+    )
+  else if (rescue) {
     return <></>
   } else {
     return (
