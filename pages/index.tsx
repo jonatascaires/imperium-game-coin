@@ -12,6 +12,8 @@ import Shop from '../components/Play/Shop';
 import Garage from '../components/Play/garage';
 import Road from '../components/Play/road';
 import { parseCookies } from 'nookies'
+import Image from 'next/image';
+import Whitepaper from '../components/Play/Whitepaper';
 
 declare global {
   interface Window {
@@ -31,7 +33,7 @@ export default function Index() {
   const notify = Notify()
 
   const [connectMetamask, setConnectMetamask] = useState(0)
-  const { contract, address, notifyMsg } = ConnectionWithContract(connectMetamask)
+  const { contract, address, notifyMsg, contractAddress } = ConnectionWithContract(connectMetamask)
   useEffect(() => {
     notify(notifyMsg[0], notifyMsg[1])
   }, [notifyMsg])
@@ -110,6 +112,9 @@ export default function Index() {
       case 6:
         return <div className="overflow-y-auto h-[571px] my-3 animate__animated animate__fadeIn"><StakingRescue contract={contract} address={address} checkBalance={checkBalance} /></div>
 
+      case 7:
+        return <div className="overflow-y-auto h-[675px] my-3 animate__animated animate__fadeIn"><Whitepaper setActivePage={setActivePage} /></div>
+
       default:
         return <Home connect={() => setConnectMetamask(Math.random())} />;
 
@@ -122,7 +127,7 @@ export default function Index() {
         <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-20 outline-none focus:outline-none bg-black bg-opacity-60 animate__animated animate__fadeIn">
           <div className={`relative flex w-[412px] h-[700px] justify-center items-center z-30 text-2xl ${activePage > 0 && 'bg-[#1C1C1C] bg-opacity-70'} rounded-xl animate__animated animate__fadeIn`}>
             <div>
-              {activePage > 0 &&
+              {(activePage > 0 && activePage < 7) &&
                 <Header activePage={activePage} balance={balance} supply={supply}
                   burnt={burnt} mined={mined} pool={pool} loading={loading} setActivePage={setActivePage} alertGarage={false} alertRoad={false} />
               }
@@ -137,6 +142,28 @@ export default function Index() {
           <source src="/game-img/video-background2.mp4" type="video/mp4" />
         Your browser does not support the video tag.
         </video>
+      </div>
+      <div className="absolute -top-12 left-5 opacity-50">
+        <Image
+          src={`/game-img/binance_smart_chain.svg`}
+          alt="time-icon"
+          width={200}
+          height={180}
+        />
+      </div>
+      <div className="absolute -top-2 right-2 opacity-50">
+        <Image
+          src={`/game-img/metamask2.svg`}
+          alt="time-icon"
+          width={130}
+          height={130}
+        />
+      </div>
+      <div className={`absolute bottom-0 h-8 bg-black opacity-50 flex justify-center items-center gap-2 font-OdibeeSans w-screen text-xl text-white ${activePage > 0 && 'hidden'}`}>
+        <span>Official Imperium Truck Token:</span>
+        <span className="text-blue-300 cursor-pointer" onClick={() => { navigator.clipboard.writeText(contractAddress), notify('Official contract copied!', 'success') }}>{contractAddress}</span>
+        <span className="-mt-1">|</span>
+        <span className="text-blue-300 cursor-pointer animate-pulse" onClick={() => setActivePage(7)}>Whitepaper</span>
       </div>
     </>
   )

@@ -19,7 +19,7 @@ export default function Header(props: HeaderProps) {
   return (
     <div className="flex flex-col gap-3">
       <div className="flex justify-between items-center">
-        <div onClick={() => props.setActivePage(1)} className={(props.activePage >= 1 && props.activePage <= 4) && 'hidden'}>
+        <div onClick={() => props.activePage < 5 ? props.setActivePage(0) : props.setActivePage(1)}>
         <Image
           src={`/game-img/back.svg`}
           alt="icon-dashboard"

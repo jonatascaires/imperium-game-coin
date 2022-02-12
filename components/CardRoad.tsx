@@ -171,7 +171,7 @@ export default function CardRoad(props: CardRoadProps) {
                 </div>
                 : name[0] + '-' + uniqueId + '-' + 'L' + level
               }
-              <div className={`cursor-pointer z-40 ml-2 mt-1 ${(loadingUpgrade || level >= 10) && 'hidden'} ${enableBtnRepair && 'opacity-30 cursor-not-allowed'}`} onClick={() => !enableBtnRepair && upgrade(props.idTruck)}>
+              <div className={`cursor-pointer animate-pulse z-40 ml-2 mt-1 ${(loadingUpgrade || level >= 10) && 'hidden'} ${enableBtnRepair && 'opacity-30 cursor-not-allowed animate-none'}`} onClick={() => !enableBtnRepair && upgrade(props.idTruck)}>
                 <Image
                   src="/game-img/upgrade.svg"
                   alt="upgrade"

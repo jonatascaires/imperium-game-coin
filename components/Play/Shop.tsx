@@ -16,7 +16,7 @@ export default function Shop(props: ShopProps) {
   return (
     <div className="relative p-2 animate__animated animate__fadeIn">
       <CardShop truckOption={truckOption} contract={props.contract} address={props.address} code={props.code} checkBalance={props.checkBalance} />
-      <div className="absolute left-7 top-32 cursor-pointer"
+      <div className="absolute left-7 top-32 cursor-pointer animate-pulse"
         onClick={() => setTruckOption((truckOption - 1) < 1 ? 3 : truckOption - 1)}>
         <Image
           src={`/game-img/back.svg`}
@@ -25,7 +25,7 @@ export default function Shop(props: ShopProps) {
           height={24}
         />
       </div>
-      <div className="absolute right-7 top-32 cursor-pointer"
+      <div className="absolute right-7 top-32 cursor-pointer animate-pulse"
         onClick={() => setTruckOption((truckOption + 1) > 3 ? 1 : truckOption + 1)}>
         <Image
           src={`/game-img/next.svg`}

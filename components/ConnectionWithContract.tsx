@@ -8,11 +8,12 @@ export default function ConnectionWithContract(connectMetamask: number) {
   const [contract, setContract] = useState(null)
   const [notifyMsg, setNotifyMsg] = useState([])
 
+  const contractAddress = "0xFbf1EA4ad27a7d6a533C5cB41273139B53a66A76"
+
   useEffect(() => {
     if (connectMetamask > 0) {
       let ethereum = window.ethereum;
-      let abi = ImperiumTruck()
-      let contractAddress = "0xFbf1EA4ad27a7d6a533C5cB41273139B53a66A76"
+      let abi = ImperiumTruck()     
 
       window.ethereum ?
         ethereum.request({ method: "eth_requestAccounts" }).then((accounts: any) => {
@@ -31,7 +32,8 @@ export default function ConnectionWithContract(connectMetamask: number) {
   return {
     contract,
     address,
-    notifyMsg
+    notifyMsg,
+    contractAddress
   }
 
 }

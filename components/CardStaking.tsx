@@ -92,7 +92,7 @@ export default function CardStaking(props: CardStakingProps) {
           <div className={`relative rounded-lg h-5 bg-[#85E2A5]`} style={{ width: `${100 - countTimeLocked()}%` }}></div>
         </div>
         <div className={`flex items-center justify-center h-7 w-20 rounded-lg 
-            bg-[#1C1C1C] border border-[#85E2A5] font-PassionOne text-lg ${enableBtnRescue ? 'cursor-pointer' : 'opacity-30 cursor-not-allowed'}`}
+            bg-[#1C1C1C] border border-[#85E2A5] font-PassionOne text-lg ${enableBtnRescue ? 'cursor-pointer animate-pulse' : 'opacity-30 cursor-not-allowed animate-none'}`}
           onClick={() => (!loadingRescue && enableBtnRescue) && StakingRescue(props.id)}
         >
           {loadingRescue ? <ReactLoading type="bubbles" width={25} className="-mb-9" /> :

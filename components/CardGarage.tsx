@@ -163,7 +163,7 @@ export default function CardGarage(props: CardGarageProps) {
                 <div className={`relative rounded-lg h-5 bg-[#F4ED47]`} style={{ width: `${countTimeToFuel()}%` }}></div>
               </div>
               <div className={`flex items-center justify-center h-7 w-16 rounded-lg 
-            bg-[#1C1C1C] border border-[#F4ED47] font-PassionOne text-lg cursor-pointer ${(!enableBtnToFuel || enableBtnRepair) && 'opacity-30 cursor-not-allowed'}`}
+            bg-[#1C1C1C] border border-[#F4ED47] font-PassionOne text-lg cursor-pointer animate-pulse ${(!enableBtnToFuel || enableBtnRepair) && 'opacity-30 cursor-not-allowed animate-none'}`}
                 onClick={() => (enableBtnToFuel && !enableBtnRepair && !loadingFuel) && toFuel(props.idTruck)}>
                 {loadingFuel ? <ReactLoading type="bubbles" width={25} className="-mb-9" /> :
                   (enableBtnToFuel && !enableBtnRepair) ?
@@ -192,7 +192,7 @@ export default function CardGarage(props: CardGarageProps) {
                 <div className={`relative rounded-lg h-5 bg-[#A35FD9]`} style={{ width: `${countTimeRepair()}%` }}></div>
               </div>
               <div className={`flex items-center justify-center h-7 w-16 rounded-lg 
-            bg-[#1C1C1C] border border-[#A35FD9] font-PassionOne text-lg cursor-pointer ${!enableBtnRepair && 'opacity-30 cursor-not-allowed'}`}
+            bg-[#1C1C1C] border border-[#A35FD9] font-PassionOne text-lg cursor-pointer animate-pulse ${!enableBtnRepair && 'opacity-30 cursor-not-allowed animate-none'}`}
                 onClick={() => (enableBtnRepair && !loadingRepair) && repair(props.idTruck)}>
                 {loadingRepair ? <ReactLoading type="bubbles" width={25} className="-mb-9" /> :
                   enableBtnRepair ?

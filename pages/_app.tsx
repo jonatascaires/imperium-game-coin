@@ -8,7 +8,10 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider attribute="class">
       <Component {...pageProps} />
-      <ToastContainer />
+      <ToastContainer 
+      position="top-center"
+      className="opacity-90"
+      />
     </ThemeProvider>
   )
 }

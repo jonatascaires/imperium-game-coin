@@ -111,7 +111,7 @@ export default function CardShop(props: CardShopProps) {
           </div>
         </div>
       </div>
-      <div className="my-2">
+      <div className="my-2 animate-pulse">
         <BuyButton action={() => BuyTruck(value)} loading={loading}>Buy Now</BuyButton>
       </div>
     </div>

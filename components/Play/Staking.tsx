@@ -131,7 +131,7 @@ export default function Staking(props: StakingProps) {
             </div>
           </div>
           <div className={`flex items-center justify-center h-8 w-24 rounded-lg 
-            bg-[#1C1C1C] border border-[#A35FD9] font-PassionOne text-lg ${loadingStaking ? 'cursor-not-allowed' : 'cursor-pointer'}`}
+            bg-[#1C1C1C] border border-[#A35FD9] font-PassionOne text-lg ${loadingStaking ? 'cursor-not-allowed animate-none' : 'cursor-pointer animate-pulse'}`}
             onClick={() => !loadingStaking && StakingLocked()}>
             {loadingStaking ? <ReactLoading type="bubbles" width={25} className="-mb-9" /> : 'CONFIRM'}
           </div>
