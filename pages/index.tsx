@@ -11,6 +11,7 @@ import StakingRescue from '../components/Play/StakingRescue';
 import Shop from '../components/Play/Shop';
 import Garage from '../components/Play/garage';
 import Road from '../components/Play/road';
+import { parseCookies } from 'nookies'
 
 declare global {
   interface Window {
@@ -20,7 +21,12 @@ declare global {
 
 export default function Index() {
 
-  const code = 123456
+  const cookies = parseCookies()
+
+  let code = 123456789
+  if (cookies['imperiumtruck.uplinecode']) {
+    code = parseInt(cookies['imperiumtruck.uplinecode'])
+  }
 
   const notify = Notify()
 
@@ -100,7 +106,7 @@ export default function Index() {
 
       case 5:
         return <div className="overflow-y-auto h-[571px] my-3"><Staking contract={contract} address={address} checkBalance={checkBalance} /></div>
-      
+
       case 6:
         return <div className="overflow-y-auto h-[571px] my-3"><StakingRescue contract={contract} address={address} checkBalance={checkBalance} /></div>
 

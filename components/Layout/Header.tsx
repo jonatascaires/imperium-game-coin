@@ -41,7 +41,7 @@ export default function Header(props: HeaderProps) {
           </span>
         </div>
       </div>
-      <div className={`grid grid-rows-2 grid-cols-2 gap-3 mt-3 mb-3 ${(props.activePage === 4 || props.activePage === 5 || props.activePage === 6) && 'hidden'}`}>
+      <div className={`grid grid-rows-2 grid-cols-2 gap-3 mt-3 mb-3 ${(props.activePage === 5 || props.activePage === 6) && 'hidden'}`}>
         <div className="flex">
           <Image
             src={`/game-img/header-supply.svg`}
@@ -100,7 +100,7 @@ export default function Header(props: HeaderProps) {
         </div>
       </div>
       <div className={`flex justify-between gap-3 
-      ${(props.activePage === 4 || props.activePage === 5 || props.activePage === 6) && 'hidden'}`}>
+      ${(props.activePage === 5 || props.activePage === 6) && 'hidden'}`}>
         <NavButton name="Shop" fontSize="text-2xl"
           inative={props.activePage === 1 ? false : true}
           alert={false}
