@@ -93,22 +93,22 @@ export default function Index() {
   const renderContent = useCallback(() => {
     switch (activePage) {
       case 1:
-        return <div className="overflow-y-auto h-[350px] my-3"><Shop contract={contract} address={address} code={code} checkBalance={checkBalance} /></div>
+        return <div className="overflow-y-auto h-[350px] my-3 animate__animated animate__fadeIn"><Shop contract={contract} address={address} code={code} checkBalance={checkBalance} /></div>
 
       case 2:
-        return <div className="overflow-y-auto h-[350px] my-3"><Garage contract={contract} address={address} checkBalance={checkBalance} /></div>
+        return <div className="overflow-y-auto h-[350px] my-3 animate__animated animate__fadeIn"><Garage contract={contract} address={address} checkBalance={checkBalance} /></div>
 
       case 3:
-        return <div className="overflow-y-auto h-[350px] my-3"><Road contract={contract} address={address} checkBalance={checkBalance} /></div>
+        return <div className="overflow-y-auto h-[350px] my-3 animate__animated animate__fadeIn"><Road contract={contract} address={address} checkBalance={checkBalance} /></div>
 
       case 4:
-        return <div className="overflow-y-auto h-[350px] my-3"><Affiliates contract={contract} address={address} checkBalance={checkBalance} /></div>
+        return <div className="overflow-y-auto h-[350px] my-3 animate__animated animate__fadeIn"><Affiliates contract={contract} address={address} checkBalance={checkBalance} /></div>
 
       case 5:
-        return <div className="overflow-y-auto h-[571px] my-3"><Staking contract={contract} address={address} checkBalance={checkBalance} /></div>
+        return <div className="overflow-y-auto h-[571px] my-3 animate__animated animate__fadeIn"><Staking contract={contract} address={address} checkBalance={checkBalance} /></div>
 
       case 6:
-        return <div className="overflow-y-auto h-[571px] my-3"><StakingRescue contract={contract} address={address} checkBalance={checkBalance} /></div>
+        return <div className="overflow-y-auto h-[571px] my-3 animate__animated animate__fadeIn"><StakingRescue contract={contract} address={address} checkBalance={checkBalance} /></div>
 
       default:
         return <Home connect={() => setConnectMetamask(Math.random())} />;
@@ -118,9 +118,9 @@ export default function Index() {
 
   return (
     <>
-      <div className="relative flex items-center justify-center h-screen overflow-hidden">
-        <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-20 outline-none focus:outline-none bg-black bg-opacity-60">
-          <div className={`relative flex w-[412px] h-[700px] justify-center items-center z-30 text-2xl ${activePage > 0 && 'bg-[#1C1C1C] bg-opacity-70'} rounded-xl`}>
+      <div className="relative flex items-center justify-center h-screen overflow-hidden  animate__animated animate__fadeIn">
+        <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-20 outline-none focus:outline-none bg-black bg-opacity-60 animate__animated animate__fadeIn">
+          <div className={`relative flex w-[412px] h-[700px] justify-center items-center z-30 text-2xl ${activePage > 0 && 'bg-[#1C1C1C] bg-opacity-70'} rounded-xl animate__animated animate__fadeIn`}>
             <div>
               {activePage > 0 &&
                 <Header activePage={activePage} balance={balance} supply={supply}
@@ -133,7 +133,7 @@ export default function Index() {
             </div>
           </div>
         </div>
-        <video autoPlay loop muted className="absolute z-10 w-auto min-w-full min-h-full max-w-none">
+        <video autoPlay loop muted className="absolute z-10 w-auto min-w-full min-h-full max-w-none animate__animated animate__fadeIn">
           <source src="/game-img/video-background2.mp4" type="video/mp4" />
         Your browser does not support the video tag.
         </video>

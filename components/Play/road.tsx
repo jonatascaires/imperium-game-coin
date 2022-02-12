@@ -24,7 +24,7 @@ export default function Road(props: RoadProps) {
   }
 
   return (
-    <div className="grid grid-cols-2 gap-2">
+    <div className="grid grid-cols-2 gap-2 animate__animated animate__fadeIn">
       {renderCard()}
     </div>
   )

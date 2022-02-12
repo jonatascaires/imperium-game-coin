@@ -14,7 +14,7 @@ export default function Shop(props: ShopProps) {
   const [truckOption, setTruckOption] = useState(1)
 
   return (
-    <div className="relative p-2">
+    <div className="relative p-2 animate__animated animate__fadeIn">
       <CardShop truckOption={truckOption} contract={props.contract} address={props.address} code={props.code} checkBalance={props.checkBalance} />
       <div className="absolute left-7 top-32 cursor-pointer"
         onClick={() => setTruckOption((truckOption - 1) < 1 ? 3 : truckOption - 1)}>

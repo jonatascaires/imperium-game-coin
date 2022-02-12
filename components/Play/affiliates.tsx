@@ -32,7 +32,7 @@ export default function Affiliates(props: AffiliatesProps) {
   const [loadingPage, setLoadingPage] = useState(true)
 
   return (
-    <div className="font-OdibeeSans flex flex-col gap-2 text-center">
+    <div className="font-OdibeeSans flex flex-col gap-2 text-center animate__animated animate__fadeIn">
       <div className="flex justify-center items-center gap-5">
         <div className="font-bold flex flex-col">
           <span className="text-2xl">AFFILIATE</span>

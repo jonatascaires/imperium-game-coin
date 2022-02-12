@@ -24,7 +24,7 @@ export default function Garage(props: GarageProps) {
   }
 
   return (
-    <div className="flex flex-col gap-3 items-center">
+    <div className="flex flex-col gap-3 items-center animate__animated animate__fadeIn">
       {renderCard()}
     </div>
   )

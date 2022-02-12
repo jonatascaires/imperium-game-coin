@@ -24,7 +24,7 @@ export default function StakingRescue(props: StakingRecoverProps) {
   }
 
   return (
-    <div className="flex flex-col gap-3 text p-2 -mt-2">
+    <div className="flex flex-col gap-3 text p-2 -mt-2 animate__animated animate__fadeIn">
       <div className="font-PassionOne text-center">
         YOUR PERSONAL IGC SAVINGS ACCOUNT
       </div>
