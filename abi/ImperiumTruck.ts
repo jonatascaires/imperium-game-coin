@@ -2,6 +2,11 @@ export default function ImperiumTruck() {
 
   const imperiumTruck = [
     {
+      "inputs": [''],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
       "anonymous": false,
       "inputs": [
         {
@@ -231,9 +236,9 @@ export default function ImperiumTruck() {
     {
       "inputs": [
         {
-          "internalType": "uint256",
+          "internalType": "uint16",
           "name": "_value",
-          "type": "uint256"
+          "type": "uint16"
         },
         {
           "internalType": "uint256",
