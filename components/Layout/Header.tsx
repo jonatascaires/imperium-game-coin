@@ -13,6 +13,7 @@ interface HeaderProps {
   setActivePage: (v: number) => void
   alertGarage: boolean
   alertRoad: boolean
+  addressUser: string
 }
 
 export default function Header(props: HeaderProps) {
@@ -20,16 +21,16 @@ export default function Header(props: HeaderProps) {
     <div className="flex flex-col gap-3">
       <div className="flex justify-between items-center">
         <div onClick={() => props.activePage < 5 ? props.setActivePage(0) : props.setActivePage(1)}>
-        <Image
-          src={`/game-img/back.svg`}
-          alt="icon-dashboard"
-          width={14}
-          height={24}
-          className="cursor-pointer"
-        />
+          <Image
+            src={`/game-img/back.svg`}
+            alt="icon-dashboard"
+            width={14}
+            height={24}
+            className="cursor-pointer"
+          />
         </div>
-        <span className="text-4xl font-PassionOne">Imperium Truck</span>
         <div className="flex justify-center items-center gap-2">
+          <span className="text-2xl font-PassionOne">{props.addressUser}</span>
           <Image
             src={`/game-img/balance-diamond.svg`}
             alt="icon-dashboard"
@@ -128,7 +129,7 @@ export default function Header(props: HeaderProps) {
           inative={props.activePage === 6 ? false : true}
           alert={props.alertGarage}
           action={() => props.setActivePage(6)}
-        />        
+        />
       </div>
     </div>
   )

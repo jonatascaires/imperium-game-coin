@@ -7,6 +7,7 @@ export default function ConnectionWithContract(connectMetamask: number) {
   const [address, setAddress] = useState(null)
   const [contract, setContract] = useState(null)
   const [notifyMsg, setNotifyMsg] = useState([])
+  const [addressUser, setAddressUser] = useState('')
 
   const contractAddress = "0xFbf1EA4ad27a7d6a533C5cB41273139B53a66A76"
 
@@ -19,6 +20,7 @@ export default function ConnectionWithContract(connectMetamask: number) {
         ethereum.request({ method: "eth_requestAccounts" }).then((accounts: any) => {
 
           setAddress(accounts[0])
+          setAddressUser(accounts[0].substring(0, 5)+'…'+accounts[0].substring(accounts[0].length - 4))
           let w3 = new Web3(ethereum)
 
           let c = new w3.eth.Contract(abi, contractAddress)
@@ -33,7 +35,8 @@ export default function ConnectionWithContract(connectMetamask: number) {
     contract,
     address,
     notifyMsg,
-    contractAddress
+    contractAddress,
+    addressUser
   }
 
 }

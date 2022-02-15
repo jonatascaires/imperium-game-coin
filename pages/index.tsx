@@ -33,7 +33,7 @@ export default function Index() {
   const notify = Notify()
 
   const [connectMetamask, setConnectMetamask] = useState(0)
-  const { contract, address, notifyMsg, contractAddress } = ConnectionWithContract(connectMetamask)
+  const { contract, address, notifyMsg, contractAddress, addressUser } = ConnectionWithContract(connectMetamask)
   useEffect(() => {
     notify(notifyMsg[0], notifyMsg[1])
   }, [notifyMsg])
@@ -128,7 +128,7 @@ export default function Index() {
           <div className={`relative flex w-[412px] h-[700px] justify-center items-center z-30 text-2xl ${activePage > 0 && 'bg-[#1C1C1C] bg-opacity-70'} rounded-xl animate__animated animate__fadeIn`}>
             <div>
               {(activePage > 0 && activePage < 7) &&
-                <Header activePage={activePage} balance={balance} supply={supply}
+                <Header activePage={activePage} balance={balance} supply={supply} addressUser={addressUser}
                   burnt={burnt} mined={mined} pool={pool} loading={loading} setActivePage={setActivePage} alertGarage={false} alertRoad={false} />
               }
               {renderContent()}
