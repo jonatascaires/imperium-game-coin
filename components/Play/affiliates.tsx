@@ -20,7 +20,7 @@ export default function Affiliates(props: AffiliatesProps) {
       setMaximumRelationship(bonus / 100000000)
       props.contract.methods.getTrucksByOwner(props.address).call().then((result: string[]) => {
         props.contract.methods.trucks(result[0]).call().then((code: any) => {
-          setLinkReference(`https://imperium-truck.com/ref/${code.uniqueId}`)
+          setLinkReference(`https://imperium-truck.vercel.app/ref/${code.uniqueId}`)
           setLoadingPage(false)
         }).catch((err: string) => console.log(err))
       }).catch((err: string) => console.log(err))
