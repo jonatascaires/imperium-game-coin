@@ -23,7 +23,7 @@ export default function Footer(props: FooterProps) {
           width={25}
           height={25}
         />
-        <span className="text-lg font-PassionOne">Staking</span>
+        <span className="text-lg font-PassionOne">Savings</span>
       </div>
     </div>
   )
