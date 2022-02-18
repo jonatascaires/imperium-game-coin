@@ -30,9 +30,8 @@ export default function Whitepaper(props: WhitepaperProps) {
             <span>This token has two characteristics: it is deflationary and also inflationary. That is, with each supply of the truck carried out by the player, 5% of the value will be burned, reducing the money supply. And when the game pool does not have enough resources to pay the player reward, new tokens will be created.</span>
             <span>IGC initial offer is 1,000,000 units.</span>
             <span>20% (200k IGC) of the starting offer goes to the game pool.</span>
-            <span>5% (50k IGC) for Airdrop and strategic partnerships.</span>
-            <span>10% (100k IGC) for token pre-sales at a fixed price of $0.30</span>
-            <span>65% (650k IGC) for public sale through PancakeSwap at a starting price of $0.50</span>
+            <span>5% (50k IGC) for Airdrop and strategic partnerships.</span>            
+            <span>75% (750k IGC) for public sale through PancakeSwap at a starting price of 0.25 BUSD</span>
             <span>The project proposal is that tokens are scarce, quite scarce, thus causing a great appreciation over time.</span>
           </>
         )

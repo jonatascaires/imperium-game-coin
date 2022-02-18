@@ -159,6 +159,14 @@ export default function Index() {
           height={130}
         />
       </div>
+      <div className="absolute top-5 left-4 opacity-50">
+        <Image
+          src={`/game-img/PancakeSwap.svg`}
+          alt="time-icon"
+          width={200}
+          height={150}
+        />
+      </div>
       <div className={`absolute bottom-0 h-8 bg-black opacity-50 flex justify-center items-center gap-2 font-OdibeeSans w-screen text-xl text-white ${activePage > 0 && 'hidden'}`}>
         <span>Official Imperium Truck Token:</span>
         <span className="text-blue-300 cursor-pointer" onClick={() => { navigator.clipboard.writeText(contractAddress), notify('Official contract copied!', 'success') }}>{contractAddress}</span>
