@@ -66,7 +66,7 @@ export default function CardStaking(props: CardStakingProps) {
             if (apy == 50) {
               maxTimeLocked = 360
             }
-    let lockedTime = timeLocked > Date.now() ? Math.floor((((timeLocked - Date.now()) / 1000) / 60)) : 0
+    let lockedTime = timeLocked > Date.now() ? Math.floor((((timeLocked - Date.now()) / 1000) / 86400)) : 0
     if (lockedTime > 0) {
       return (Math.floor((lockedTime / maxTimeLocked) * 100))
     } else {

@@ -106,13 +106,15 @@ export default function CardRoad(props: CardRoadProps) {
         if (name === 'Ruby') {
           maxTimeFuel = 5
         }
-    let timeFuel = fuelTime > Date.now() ? Math.floor((((fuelTime - Date.now()) / 1000) / 60)) : 0
+    let timeFuel = fuelTime > Date.now() ? Math.floor((((fuelTime - Date.now()) / 1000) / 86400)) : 0
     if (timeFuel > 0) {
       return (Math.floor((timeFuel / maxTimeFuel) * 100))
     } else {
       return 0
     }
   }
+
+  console.log(fuelTime - Date.now())
 
   const countTimeRepair = () => {
     let maxTimeRepair = 0
@@ -125,7 +127,7 @@ export default function CardRoad(props: CardRoadProps) {
         if (name === 'Ruby') {
           maxTimeRepair = 114
         }
-    let timeRepair = repairTime > Date.now() ? Math.floor((((repairTime - Date.now()) / 1000) / 60)) : 0
+    let timeRepair = repairTime > Date.now() ? Math.floor((((repairTime - Date.now()) / 1000) / 86400)) : 0
     if (timeRepair > 0) {
       return (Math.floor((timeRepair / maxTimeRepair) * 100))
     } else {
@@ -144,7 +146,7 @@ export default function CardRoad(props: CardRoadProps) {
         if (name === 'Ruby') {
           maxTimeWithdraw = 5
         }
-    let timeWithdraw = withdrawTime > Date.now() ? Math.floor((((withdrawTime - Date.now()) / 1000) / 60)) : 0
+    let timeWithdraw = withdrawTime > Date.now() ? Math.floor((((withdrawTime - Date.now()) / 1000) / 86400)) : 0
     if (timeWithdraw > 0) {
       return (Math.floor((timeWithdraw / maxTimeWithdraw) * 100))
     } else {
