@@ -21,13 +21,23 @@ export default function Header(props: HeaderProps) {
     <div className="flex flex-col gap-3">
       <div className="flex justify-between items-center">
         <div onClick={() => props.activePage < 5 ? props.setActivePage(0) : props.setActivePage(1)}>
-          <Image
-            src={`/game-img/back.svg`}
-            alt="icon-dashboard"
-            width={14}
-            height={24}
-            className="cursor-pointer"
-          />
+          {props.activePage < 5 ?
+            <Image
+              src={`/game-img/close.svg`}
+              alt="icon-close"
+              width={14}
+              height={24}
+              className="cursor-pointer"
+            />
+            :
+            <Image
+              src={`/game-img/back.svg`}
+              alt="icon-back"
+              width={14}
+              height={24}
+              className="cursor-pointer"
+            />
+          }
         </div>
         <div className="flex justify-center items-center gap-2">
           <span className="text-2xl font-PassionOne">{props.addressUser}</span>
