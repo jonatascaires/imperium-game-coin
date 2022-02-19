@@ -14,6 +14,7 @@ import Road from '../components/Play/road';
 import { parseCookies } from 'nookies'
 import Image from 'next/image';
 import Whitepaper from '../components/Play/Whitepaper';
+import Presale from '../components/Play/Presale';
 
 declare global {
   interface Window {
@@ -115,6 +116,9 @@ export default function Index() {
       case 7:
         return <div className="overflow-y-auto h-[675px] my-3 animate__animated animate__fadeIn"><Whitepaper setActivePage={setActivePage} /></div>
 
+      case 8:
+        return <div className="overflow-y-auto h-[675px] my-3 animate__animated animate__fadeIn"><Presale setActivePage={setActivePage} /></div>
+
       default:
         return <Home connect={() => setConnectMetamask(Math.random())} />;
 
@@ -172,6 +176,8 @@ export default function Index() {
         <span className="text-blue-300 cursor-pointer" onClick={() => { navigator.clipboard.writeText(contractAddress), notify('Official contract copied!', 'success') }}>{contractAddress}</span>
         <span className="-mt-1">|</span>
         <span className="text-blue-300 cursor-pointer animate-pulse" onClick={() => setActivePage(7)}>Whitepaper</span>
+        <span className="-mt-1">|</span>
+        <span className="text-blue-300 cursor-pointer animate-pulse" onClick={() => setActivePage(8)}>Presale</span>
       </div>
     </>
   )
