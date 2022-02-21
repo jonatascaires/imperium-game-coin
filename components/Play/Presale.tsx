@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { useState } from "react";
 import Notify from "../Notify";
 
 interface PresaleProps {
@@ -35,7 +34,7 @@ export default function Presale(props: PresaleProps) {
           We currently have available:
         </div>
         <div className="text-4xl text-center text-yellow-400">
-          978,800 IGC
+          995,000 IGC
         </div>
         <div>
           100% of the amount raised from the pre-sale of the tokens will be used to provide more liquidity on the IGC listing on PancakeSwap.
