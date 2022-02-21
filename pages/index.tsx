@@ -142,8 +142,8 @@ export default function Index() {
             </div>
           </div>
         </div>
-        <video autoPlay loop muted className="absolute z-10 w-auto min-w-full min-h-full max-w-none animate__animated animate__fadeIn">
-          <source src="/game-img/video-background2.mp4" type="video/mp4" />
+        <video autoPlay muted className="absolute z-10 w-auto min-w-full min-h-full max-w-none animate__animated animate__fadeIn">
+          <source src="/game-img/video-background0.mp4" type="video/mp4" />
         Your browser does not support the video tag.
         </video>
       </div>
