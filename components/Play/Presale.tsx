@@ -9,7 +9,7 @@ export default function Presale(props: PresaleProps) {
 
   const notify = Notify()
 
-  const officialAddress = '0x9617A91DaffE6C79a2a702fA48BB62ae856F1a44'
+  const officialAddress = '0xdA8e0fDd998c51D9b59aE543D713b7Ec33C28f77'
 
   return (
     <div className="text-left px-3">
