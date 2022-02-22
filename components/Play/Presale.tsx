@@ -47,7 +47,7 @@ export default function Presale(props: PresaleProps) {
           {officialAddress}
         </div>
         <div>
-          You will receive the IGC back to the same address you sent the BUSD from.
+          You will receive the IGC back at the same Metamask address you sent the BUSD from.
         </div>
       </div>
     </div>
