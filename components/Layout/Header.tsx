@@ -14,6 +14,7 @@ interface HeaderProps {
   alertGarage: boolean
   alertRoad: boolean
   addressUser: string
+  language?: string
 }
 
 export default function Header(props: HeaderProps) {
@@ -61,7 +62,7 @@ export default function Header(props: HeaderProps) {
             height={41}
           />
           <div className="flex flex-col ml-1">
-            <span className="text-[#797979] text-sm font-PassionOne">Max. Supply</span>
+            <span className="text-[#797979] text-sm font-PassionOne">{props.language === 'en' ? 'Max. Supply' : 'Fornecimento máximo'}</span>
             <span className="text-2xl font-PassionOne -mt-2">
               {props.loading ? <ReactLoading type="bubbles" width={25} className="-mb-9" /> : props.supply}
             </span>
@@ -75,7 +76,7 @@ export default function Header(props: HeaderProps) {
             height={41}
           />
           <div className="flex flex-col ml-1">
-            <span className="text-[#797979] text-sm font-PassionOne">Burnt Supply</span>
+            <span className="text-[#797979] text-sm font-PassionOne">{props.language === 'en' ? 'Burnt Supply' : 'Fornecimento queimado'}</span>
             <span className="text-2xl font-PassionOne -mt-2">
               {props.loading ? <ReactLoading type="bubbles" width={25} className="-mb-9" /> : props.burnt}
             </span>
@@ -89,7 +90,7 @@ export default function Header(props: HeaderProps) {
             height={41}
           />
           <div className="flex flex-col ml-1">
-            <span className="text-[#797979] text-sm font-PassionOne">Mined Supply</span>
+            <span className="text-[#797979] text-sm font-PassionOne">{props.language === 'en' ? 'Mined Supply' : 'Fornecimento minerado'}</span>
             <span className="text-2xl font-PassionOne -mt-2">
               {props.loading ? <ReactLoading type="bubbles" width={25} className="-mb-9" /> : props.mined}
             </span>
@@ -103,7 +104,7 @@ export default function Header(props: HeaderProps) {
             height={41}
           />
           <div className="flex flex-col ml-1">
-            <span className="text-[#797979] text-sm font-PassionOne">Game Pool</span>
+            <span className="text-[#797979] text-sm font-PassionOne">{props.language === 'en' ? 'Game Pool' : 'Pool de jogos'}</span>
             <span className="text-2xl font-PassionOne -mt-2">
               {props.loading ? <ReactLoading type="bubbles" width={25} className="-mb-9" /> : props.pool}
             </span>
@@ -112,17 +113,17 @@ export default function Header(props: HeaderProps) {
       </div>
       <div className={`flex justify-between gap-3 
       ${(props.activePage === 5 || props.activePage === 6) && 'hidden'}`}>
-        <NavButton name="Shop" fontSize="text-2xl"
+        <NavButton name={props.language === 'en' ? "Shop" : 'Comprar'} fontSize="text-2xl"
           inative={props.activePage === 1 ? false : true}
           alert={false}
           action={() => props.setActivePage(1)}
         />
-        <NavButton name="Garage" fontSize="text-2xl"
+        <NavButton name={props.language === 'en' ? "Garage" : 'Garagem'} fontSize="text-2xl"
           inative={props.activePage === 2 ? false : true}
           alert={props.alertGarage}
           action={() => props.setActivePage(2)}
         />
-        <NavButton name="Road" fontSize="text-2xl"
+        <NavButton name={props.language === 'en' ? "Road" : 'Estrada'} fontSize="text-2xl"
           inative={props.activePage === 3 ? false : true}
           alert={props.alertRoad}
           action={() => props.setActivePage(3)}
@@ -130,12 +131,12 @@ export default function Header(props: HeaderProps) {
       </div>
       <div className={`flex justify-center gap-6 
       ${(props.activePage !== 5 && props.activePage !== 6) && 'hidden'}`}>
-        <NavButton name="Savings" fontSize="text-2xl"
+        <NavButton name={props.language === 'en' ? "Savings" : 'Poupança'} fontSize="text-2xl"
           inative={props.activePage === 5 ? false : true}
           alert={false}
           action={() => props.setActivePage(5)}
         />
-        <NavButton name="Recover" fontSize="text-2xl"
+        <NavButton name={props.language === 'en' ? "Recover" : 'Recuperar'} fontSize="text-2xl"
           inative={props.activePage === 6 ? false : true}
           alert={props.alertGarage}
           action={() => props.setActivePage(6)}

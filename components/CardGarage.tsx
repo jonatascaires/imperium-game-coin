@@ -8,6 +8,7 @@ interface CardGarageProps {
   contract: any
   address: string
   checkBalance: () => void
+  language?: string
 }
 
 export default function CardGarage(props: CardGarageProps) {
@@ -176,7 +177,7 @@ export default function CardGarage(props: CardGarageProps) {
                       />
                       <span className="text-sm">{50 * level}</span>
                     </div>
-                    : 'Refuel'}
+                    : props.language === 'en' ? 'Refuel' : 'Reabastecer'}
               </div>
             </div>
             <div className="flex items-center gap-2">
@@ -205,7 +206,7 @@ export default function CardGarage(props: CardGarageProps) {
                       />
                       <span className="text-sm">{value * 0.75}</span>
                     </div>
-                    : 'Repair'}
+                    : props.language === 'en' ? 'Repair' : 'Reparo'}
               </div>
             </div>
             <div className="flex justify-center items-center text-base font-PassionOne">

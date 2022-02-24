@@ -9,6 +9,7 @@ interface CardShopProps {
   address: string
   code: number
   checkBalance: () => void
+  language?: string
 }
 
 export default function CardShop(props: CardShopProps) {
@@ -22,7 +23,7 @@ export default function CardShop(props: CardShopProps) {
   let img = ""
   let value = 0
   if (props.truckOption === 3) {
-    truckName = "Ruby"
+    truckName = props.language === 'en' ? "Epic" : "Épico"
     fuel = 5
     reward = 6
     repair = 114
@@ -30,14 +31,14 @@ export default function CardShop(props: CardShopProps) {
     img = "/game-img/ruby-truck.svg"
   } else
     if (props.truckOption === 2) {
-      truckName = "Gold"
+      truckName = props.language === 'en' ? "Rare" : 'Raro'
       fuel = 7
       reward = 8
       repair = 144
       value = 250
       img = "/game-img/gold-truck.svg"
     } else {
-      truckName = "Silver"
+      truckName = props.language === 'en' ? "Common" : "Comum"
       fuel = 9
       reward = 10
       repair = 150
@@ -82,8 +83,8 @@ export default function CardShop(props: CardShopProps) {
             height={35}
           />
           <div className="flex flex-col text-left">
-            <span className="text-[#797979] text-sm font-PassionOne">Fuel</span>
-            <span className="text-xl font-PassionOne -mt-2">{fuel} days</span>
+            <span className="text-[#797979] text-sm font-PassionOne">{props.language === 'en' ? 'Fuel' : 'Combustível'}</span>
+            <span className="text-xl font-PassionOne -mt-2">{fuel} {props.language === 'en' ? 'days' : 'dias'}</span>
           </div>
         </div>
         <div className="flex">
@@ -94,8 +95,8 @@ export default function CardShop(props: CardShopProps) {
             height={35}
           />
           <div className="flex flex-col text-left">
-            <span className="text-[#797979] text-sm font-PassionOne">Repair</span>
-            <span className="text-xl font-PassionOne -mt-2">{repair} days</span>
+            <span className="text-[#797979] text-sm font-PassionOne">{props.language === 'en' ? 'Repair' : 'Reparo'}</span>
+            <span className="text-xl font-PassionOne -mt-2">{repair} {props.language === 'en' ? 'days' : 'dias'}</span>
           </div>
         </div>
         <div className="flex">
@@ -106,13 +107,13 @@ export default function CardShop(props: CardShopProps) {
             height={35}
           />
           <div className="flex flex-col text-left">
-            <span className="text-[#797979] text-sm font-PassionOne">Reward</span>
-            <span className="text-xl font-PassionOne -mt-2">{reward} days</span>
+            <span className="text-[#797979] text-sm font-PassionOne">{props.language === 'en' ? 'Reward' : 'Recompensa'}</span>
+            <span className="text-xl font-PassionOne -mt-2">{reward} {props.language === 'en' ? 'days' : 'dias'}</span>
           </div>
         </div>
       </div>
       <div className="my-2 animate-pulse">
-        <BuyButton action={() => BuyTruck(value)} loading={loading}>Buy Now</BuyButton>
+        <BuyButton action={() => BuyTruck(value)} language={props.language} loading={loading}>{props.language === 'en' ? `Buy for ${value} IGC` : `Compre por ${value} IGC`}</BuyButton>
       </div>
     </div>
   )

@@ -5,6 +5,7 @@ interface StakingRecoverProps {
   contract: any
   address: string
   checkBalance: () => void
+  language?: string
 }
 
 export default function StakingRescue(props: StakingRecoverProps) {
@@ -19,19 +20,19 @@ export default function StakingRescue(props: StakingRecoverProps) {
 
   function renderSavings() {
     return idStaking.map((id, index) => {
-      return <CardStaking id={id} contract={props.contract} address={props.address} checkBalance={props.checkBalance} key={index} />
+      return <CardStaking id={id} contract={props.contract} address={props.address} checkBalance={props.checkBalance} key={index} language={props.language} />
     })
   }
 
   return (
     <div className="flex flex-col gap-3 text p-2 -mt-2 animate__animated animate__fadeIn">
       <div className="font-PassionOne text-center">
-        YOUR PERSONAL IGC SAVINGS ACCOUNT
+        {props.language === 'en' ? 'YOUR PERSONAL IGC SAVINGS ACCOUNT' : 'SUA CONTA DE POUPANÇA IGC PESSOAL'}
       </div>
       <div>
         <div className="bg-[#85E2A5] bg-opacity-70 font-PassionOne rounded-t-lg
               flex justify-center items-center h-10 text-xl">
-          IGC RECOVER
+          {props.language === 'en' ? 'IGC RECOVER' : 'RECUPERAR IGC'}
         </div>
         <div className="flex flex-col bg-[#272727] font-PassionOne bg-opacity-70
               rounded-b-lg gap-2">

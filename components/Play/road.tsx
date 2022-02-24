@@ -5,6 +5,7 @@ interface RoadProps {
   contract: any
   address: string
   checkBalance: () => void
+  language?: string
 }
 
 export default function Road(props: RoadProps) {
@@ -19,7 +20,7 @@ export default function Road(props: RoadProps) {
 
   function renderCard() {
     return idTrucks.map((item, index) => {
-      return <CardRoad idTruck={parseInt(item)} contract={props.contract} address={props.address} key={index} checkBalance={props.checkBalance} />
+      return <CardRoad idTruck={parseInt(item)} contract={props.contract} address={props.address} key={index} checkBalance={props.checkBalance} language={props.language} />
     })
   }
 

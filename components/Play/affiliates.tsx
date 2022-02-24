@@ -7,6 +7,7 @@ interface AffiliatesProps {
   contract: any
   address: string
   checkBalance: () => void
+  language?: string
 }
 
 export default function Affiliates(props: AffiliatesProps) {
@@ -35,9 +36,9 @@ export default function Affiliates(props: AffiliatesProps) {
     <div className="font-OdibeeSans flex flex-col gap-2 text-center animate__animated animate__fadeIn">
       <div className="flex justify-center items-center gap-5">
         <div className="font-bold flex flex-col">
-          <span className="text-2xl">AFFILIATE</span>
-          <span className="text-[#508AFB] text-5xl">BONUS</span>
-          <span className="text-2xl">PROGRAM</span>
+          <span className="text-2xl">{props.language === 'en' ? 'AFFILIATE' : 'PROGRAMA DE'}</span>
+          <span className="text-[#508AFB] text-5xl">{props.language === 'en' ? 'BONUS' : 'BÔNUS'}</span>
+          <span className="text-2xl">{props.language === 'en' ? 'PROGRAM' : 'POR AFILIADO'}</span>
         </div>
         <div>
           <Image
@@ -51,7 +52,7 @@ export default function Affiliates(props: AffiliatesProps) {
       <div>
         <div className="bg-[#508AFB] bg-opacity-70 font-PassionOne rounded-t-lg
               flex justify-center items-center h-10 text-xl">
-          YOUR AVAILABLE BONUS LIMIT
+          {props.language === 'en' ? 'YOUR AVAILABLE BONUS LIMIT' : 'SEU LIMITE DE BÔNUS DISPONÍVEL'}
         </div>
         <div className="flex justify-center items-center h-10 bg-[#272727] font-PassionOne bg-opacity-70
               rounded-b-lg">
@@ -61,7 +62,7 @@ export default function Affiliates(props: AffiliatesProps) {
       <div>
         <div className="bg-[#A35FD9] bg-opacity-70 font-PassionOne rounded-t-lg
               flex justify-center items-center h-10 text-xl">
-          YOUR LINK TO REFERENCES
+          {props.language === 'en' ? 'YOUR LINK TO REFERENCES' : 'SEU LINK PARA REFERÊNCIAS'}
         </div>
         <div className="flex justify-center items-center h-12 bg-[#272727] font-PassionOne bg-opacity-70
               rounded-b-lg font-normal text-lg cursor-pointer" onClick={() => { navigator.clipboard.writeText(linkReference), notify('Referral link copied!', 'success') }}>

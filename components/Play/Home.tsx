@@ -2,6 +2,7 @@ import NavButton from "../Buttons/NavButton"
 
 interface HomeProps {
   connect?: () => void
+  language?: string
 }
 
 export default function Home(props: HomeProps) {
@@ -10,7 +11,7 @@ export default function Home(props: HomeProps) {
       <span className="text-center text-6xl">Imperium</span>
       <span className="text-center text-8xl">Truck</span>
       <div className="flex justify-center mt-12">
-        <NavButton name="PLAY" action={() => props.connect()} />
+        <NavButton name={`${props.language === 'en' ? 'PLAY' : 'JOGAR'}`} action={() => props.connect()} />
       </div>
     </div>
   )

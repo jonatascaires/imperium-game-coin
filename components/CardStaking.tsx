@@ -7,6 +7,7 @@ interface CardStakingProps {
   contract: any
   address: string
   checkBalance: () => void
+  language?: string
 }
 
 export default function CardStaking(props: CardStakingProps) {
@@ -96,7 +97,7 @@ export default function CardStaking(props: CardStakingProps) {
           onClick={() => (!loadingRescue && enableBtnRescue) && StakingRescue(props.id)}
         >
           {loadingRescue ? <ReactLoading type="bubbles" width={25} className="-mb-9" /> :
-            <div>Recover</div>}
+            <div>{props.language === 'en' ? 'Recover' : 'Recuperar'}</div>}
         </div>
       </div>
     )

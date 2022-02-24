@@ -5,6 +5,7 @@ interface CalendarBtnProps {
   days: number 
   selected: number
   setDaysSelected: (v: number) => void
+  language?: string
 }
 
 export default function CalendarBtn(props: CalendarBtnProps) {
@@ -27,7 +28,7 @@ export default function CalendarBtn(props: CalendarBtnProps) {
       />
       <div className={`absolute top-4 ${props.days > 90 ? 'left-4' : 'left-5'} flex flex-col justify-center items-center`}>
         <span className={`-mb-3 text-3xl ${(hover || props.selected === props.days) ? 'text-white' : 'text-[#646464]'}`}>{props.days}</span>
-        <span className={`${(hover || props.selected === props.days) ? 'text-white' : 'text-[#646464]'} text-lg`}>days</span>
+        <span className={`${(hover || props.selected === props.days) ? 'text-white' : 'text-[#646464]'} text-lg`}>{props.language === 'en' ? 'days' : 'dias'}</span>
       </div>
     </div>
   )

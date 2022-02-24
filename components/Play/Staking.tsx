@@ -8,6 +8,7 @@ interface StakingProps {
   contract: any
   address: string
   checkBalance: () => void
+  language?: string
 }
 
 export default function Staking(props: StakingProps) {
@@ -66,7 +67,7 @@ export default function Staking(props: StakingProps) {
     const days = [15, 30, 90, 180, 360]
     return days.map((d, key) => {
       return (
-        <CalendarBtn days={d} selected={daysSelected} setDaysSelected={setDaysSelected} key={key} />
+        <CalendarBtn days={d} selected={daysSelected} setDaysSelected={setDaysSelected} key={key} language={props.language} />
       )
     })
   }
@@ -74,12 +75,12 @@ export default function Staking(props: StakingProps) {
   return (
     <div className="flex flex-col gap-3 text p-2 -mt-2 animate__animated animate__fadeIn">
       <div className="font-PassionOne text-center">
-        YOUR PERSONAL IGC SAVINGS ACCOUNT
+        {props.language === 'en' ? 'YOUR PERSONAL IGC SAVINGS ACCOUNT' : 'SUA CONTA DE POUPANÇA IGC PESSOAL'}
       </div>
       <div>
         <div className="bg-[#A35FD9] bg-opacity-70 font-PassionOne rounded-t-lg
               flex justify-center items-center h-10 text-xl">
-          TOTAL IGC LOCKED
+          {props.language === 'en' ? 'TOTAL IGC LOCKED' : 'TOTAL DE IGC BLOQUEADO'}
         </div>
         <div className="flex justify-center items-center h-10 bg-[#272727] font-PassionOne bg-opacity-70
               rounded-b-lg">
@@ -89,7 +90,7 @@ export default function Staking(props: StakingProps) {
       <div>
         <div className="bg-[#6650EF] bg-opacity-70 font-PassionOne rounded-t-lg
       flex justify-center items-center h-10 text-xl">
-          IGC SAVINGS
+          {props.language === 'en' ? 'IGC SAVINGS' : 'POUPANÇA IGC'}
         </div>
         <div className="flex flex-col gap-5 justify-center items-center bg-[#272727] bg-opacity-70 rounded-b-lg p-3">
           <div className="flex justify-center items-center gap-2 font-PassionOne">
@@ -103,7 +104,7 @@ export default function Staking(props: StakingProps) {
             </div>
             <div className="flex flex-col justify-center items-center 
             font-PassionOne bg-[#1C1C1C] min-w-[128px] rounded-lg">
-              <span className="text-sm">IGC TO LOCK</span>
+              <span className="text-sm">{props.language === 'en' ? 'IGC TO LOCK' : 'IGC PARA BLOQUEAR'}</span>
               <span className="-mt-1 text-2xl">{lockValue}</span>
             </div>
             <div className="cursor-pointer" onClick={() => setLockValue(lockValue + 250)}>
@@ -126,14 +127,14 @@ export default function Staking(props: StakingProps) {
               height={35}
             />
             <div className="flex flex-col font-PassionOne text-left">
-              <span className="text-base">MATURITY AMOUNT - (APY <span className="text-[#85E2A5]">{apy}%</span>)</span>
+              <span className="text-base">{props.language === 'en' ? 'MATURITY AMOUNT' : 'VALOR DE VENCIMENTO'} - (APY <span className="text-[#85E2A5]">{apy}%</span>)</span>
               <span className="text-2xl -mt-2">{(lockValue + ((((lockValue / 100) * apy) / 365) * daysSelected)).toFixed(0)} <span className="text-[#85E2A5]">(+{((((lockValue / 100) * apy) / 365) * daysSelected).toFixed(0)}) </span>IGC</span>
             </div>
           </div>
           <div className={`flex items-center justify-center h-8 w-24 rounded-lg 
             bg-[#1C1C1C] border border-[#A35FD9] font-PassionOne text-lg ${loadingStaking ? 'cursor-not-allowed animate-none' : 'cursor-pointer animate-pulse'}`}
             onClick={() => !loadingStaking && StakingLocked()}>
-            {loadingStaking ? <ReactLoading type="bubbles" width={25} className="-mb-9" /> : 'CONFIRM'}
+            {loadingStaking ? <ReactLoading type="bubbles" width={25} className="-mb-9" /> : props.language === 'en' ? 'CONFIRM' : 'CONFIRMAR'}
           </div>
         </div>
       </div>

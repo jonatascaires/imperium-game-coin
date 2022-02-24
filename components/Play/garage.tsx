@@ -5,6 +5,7 @@ interface GarageProps {
   contract: any
   address: string
   checkBalance: () => void
+  language?: string
 }
 
 export default function Garage(props: GarageProps) {
@@ -19,7 +20,7 @@ export default function Garage(props: GarageProps) {
 
   function renderCard() {
     return idTrucks.map((item, index) => {
-      return <CardGarage idTruck={parseInt(item)} contract={props.contract} address={props.address} key={index} checkBalance={props.checkBalance} />
+      return <CardGarage idTruck={parseInt(item)} contract={props.contract} address={props.address} key={index} checkBalance={props.checkBalance} language={props.language} />
     })
   }
 

@@ -8,6 +8,7 @@ interface CardRoadProps {
   idTruck: number
   checkBalance: () => void
   address: string
+  language?: string
 }
 
 export default function CardRoad(props: CardRoadProps) {
@@ -238,7 +239,7 @@ export default function CardRoad(props: CardRoadProps) {
                     />
                     <span className="text-sm">{withdrawValue}</span>
                   </div>
-                  : 'Withdraw'}
+                  : props.language === 'en' ? 'Withdraw' : 'Sacar'}
             </div>
           </div>
           <div className={`flex w-[168px] h-1 bg-[#494966] ${enableBtnWithdraw && 'hidden'}`}>
