@@ -15,7 +15,7 @@ export default function Whitepaper(props: WhitepaperProps) {
     if (v == 'Introduction 1/3') {
       return (
         <Image
-          src={`/game-img/whitepaper/br/Slide1.PNG`}
+          src={`/game-img/whitepaper/br/Slide1.svg`}
           alt="icon-dashboard"
           width={1000}
           height={720}
@@ -25,7 +25,7 @@ export default function Whitepaper(props: WhitepaperProps) {
       if (v == 'Introduction 2/3') {
         return (
           <Image
-            src={`/game-img/whitepaper/br/Slide2.PNG`}
+            src={`/game-img/whitepaper/br/Slide2.svg`}
             alt="icon-dashboard"
             width={1000}
             height={720}
@@ -35,7 +35,7 @@ export default function Whitepaper(props: WhitepaperProps) {
         if (v == 'Introduction 3/3') {
           return (
             <Image
-              src={`/game-img/whitepaper/br/Slide3.PNG`}
+              src={`/game-img/whitepaper/br/Slide3.svg`}
               alt="icon-dashboard"
               width={1000}
               height={720}
@@ -45,7 +45,7 @@ export default function Whitepaper(props: WhitepaperProps) {
           if (v == 'Token IGC') {
             return (
               <Image
-                src={`/game-img/whitepaper/br/Slide4.PNG`}
+                src={`/game-img/whitepaper/br/Slide4.svg`}
                 alt="icon-dashboard"
                 width={1000}
                 height={720}
@@ -55,7 +55,7 @@ export default function Whitepaper(props: WhitepaperProps) {
             if (v == 'Savings') {
               return (
                 <Image
-                  src={`/game-img/whitepaper/br/Slide5.PNG`}
+                  src={`/game-img/whitepaper/br/Slide5.svg`}
                   alt="icon-dashboard"
                   width={1000}
                   height={720}
@@ -65,7 +65,7 @@ export default function Whitepaper(props: WhitepaperProps) {
               if (v == 'The game 1/2') {
                 return (
                   <Image
-                    src={`/game-img/whitepaper/br/Slide6.PNG`}
+                    src={`/game-img/whitepaper/br/Slide6.svg`}
                     alt="icon-dashboard"
                     width={1000}
                     height={720}
@@ -75,7 +75,7 @@ export default function Whitepaper(props: WhitepaperProps) {
                 if (v == 'The game 2/2') {
                   return (
                     <Image
-                      src={`/game-img/whitepaper/br/Slide7.PNG`}
+                      src={`/game-img/whitepaper/br/Slide7.svg`}
                       alt="icon-dashboard"
                       width={1000}
                       height={720}
@@ -85,7 +85,7 @@ export default function Whitepaper(props: WhitepaperProps) {
                   if (v == 'Earnings simulation 1/12') {
                     return (
                       <Image
-                        src={`/game-img/whitepaper/br/Slide8.PNG`}
+                        src={`/game-img/whitepaper/br/Slide8.svg`}
                         alt="icon-dashboard"
                         width={1000}
                         height={720}
@@ -95,7 +95,7 @@ export default function Whitepaper(props: WhitepaperProps) {
                     if (v == 'Earnings simulation 2/12') {
                       return (
                         <Image
-                          src={`/game-img/whitepaper/br/Slide9.PNG`}
+                          src={`/game-img/whitepaper/br/Slide9.svg`}
                           alt="icon-dashboard"
                           width={1000}
                           height={720}
@@ -105,7 +105,7 @@ export default function Whitepaper(props: WhitepaperProps) {
                       if (v == 'Earnings simulation 3/12') {
                         return (
                           <Image
-                            src={`/game-img/whitepaper/br/Slide10.PNG`}
+                            src={`/game-img/whitepaper/br/Slide10.svg`}
                             alt="icon-dashboard"
                             width={1000}
                             height={720}
@@ -115,7 +115,7 @@ export default function Whitepaper(props: WhitepaperProps) {
                         if (v == 'Earnings simulation 4/12') {
                           return (
                             <Image
-                              src={`/game-img/whitepaper/br/Slide11.PNG`}
+                              src={`/game-img/whitepaper/br/Slide11.svg`}
                               alt="icon-dashboard"
                               width={1000}
                               height={720}
@@ -125,7 +125,7 @@ export default function Whitepaper(props: WhitepaperProps) {
                           if (v == 'Earnings simulation 5/12') {
                             return (
                               <Image
-                                src={`/game-img/whitepaper/br/Slide12.PNG`}
+                                src={`/game-img/whitepaper/br/Slide12.svg`}
                                 alt="icon-dashboard"
                                 width={1000}
                                 height={720}
@@ -135,7 +135,7 @@ export default function Whitepaper(props: WhitepaperProps) {
                             if (v == 'Earnings simulation 6/12') {
                               return (
                                 <Image
-                                  src={`/game-img/whitepaper/br/Slide13.PNG`}
+                                  src={`/game-img/whitepaper/br/Slide13.svg`}
                                   alt="icon-dashboard"
                                   width={1000}
                                   height={720}
@@ -145,7 +145,7 @@ export default function Whitepaper(props: WhitepaperProps) {
                               if (v == 'Earnings simulation 7/12') {
                                 return (
                                   <Image
-                                    src={`/game-img/whitepaper/br/Slide14.PNG`}
+                                    src={`/game-img/whitepaper/br/Slide14.svg`}
                                     alt="icon-dashboard"
                                     width={1000}
                                     height={720}
@@ -155,7 +155,7 @@ export default function Whitepaper(props: WhitepaperProps) {
                                 if (v == 'Earnings simulation 8/12') {
                                   return (
                                     <Image
-                                      src={`/game-img/whitepaper/br/Slide15.PNG`}
+                                      src={`/game-img/whitepaper/br/Slide15.svg`}
                                       alt="icon-dashboard"
                                       width={1000}
                                       height={720}
@@ -165,7 +165,7 @@ export default function Whitepaper(props: WhitepaperProps) {
                                   if (v == 'Earnings simulation 9/12') {
                                     return (
                                       <Image
-                                        src={`/game-img/whitepaper/br/Slide16.PNG`}
+                                        src={`/game-img/whitepaper/br/Slide16.svg`}
                                         alt="icon-dashboard"
                                         width={1000}
                                         height={720}
@@ -175,7 +175,7 @@ export default function Whitepaper(props: WhitepaperProps) {
                                     if (v == 'Earnings simulation 10/12') {
                                       return (
                                         <Image
-                                          src={`/game-img/whitepaper/br/Slide17.PNG`}
+                                          src={`/game-img/whitepaper/br/Slide17.svg`}
                                           alt="icon-dashboard"
                                           width={1000}
                                           height={720}
@@ -185,7 +185,7 @@ export default function Whitepaper(props: WhitepaperProps) {
                                       if (v == 'Earnings simulation 11/12') {
                                         return (
                                           <Image
-                                            src={`/game-img/whitepaper/br/Slide18.PNG`}
+                                            src={`/game-img/whitepaper/br/Slide18.svg`}
                                             alt="icon-dashboard"
                                             width={1000}
                                             height={720}
@@ -195,7 +195,7 @@ export default function Whitepaper(props: WhitepaperProps) {
                                         if (v == 'Earnings simulation 12/12') {
                                           return (
                                             <Image
-                                              src={`/game-img/whitepaper/br/Slide19.PNG`}
+                                              src={`/game-img/whitepaper/br/Slide19.svg`}
                                               alt="icon-dashboard"
                                               width={1000}
                                               height={720}
@@ -205,7 +205,7 @@ export default function Whitepaper(props: WhitepaperProps) {
                                           if (v == 'Truck upgrade') {
                                             return (
                                               <Image
-                                                src={`/game-img/whitepaper/br/Slide20.PNG`}
+                                                src={`/game-img/whitepaper/br/Slide20.svg`}
                                                 alt="icon-dashboard"
                                                 width={1000}
                                                 height={720}
@@ -215,7 +215,7 @@ export default function Whitepaper(props: WhitepaperProps) {
                                             if (v == 'Truck maintenance 1/2') {
                                               return (
                                                 <Image
-                                                  src={`/game-img/whitepaper/br/Slide21.PNG`}
+                                                  src={`/game-img/whitepaper/br/Slide21.svg`}
                                                   alt="icon-dashboard"
                                                   width={1000}
                                                   height={720}
@@ -225,7 +225,7 @@ export default function Whitepaper(props: WhitepaperProps) {
                                               if (v == 'Truck maintenance 2/2') {
                                                 return (
                                                   <Image
-                                                    src={`/game-img/whitepaper/br/Slide22.PNG`}
+                                                    src={`/game-img/whitepaper/br/Slide22.svg`}
                                                     alt="icon-dashboard"
                                                     width={1000}
                                                     height={720}
@@ -235,7 +235,7 @@ export default function Whitepaper(props: WhitepaperProps) {
                                                 if (v == 'Rewards') {
                                                   return (
                                                     <Image
-                                                      src={`/game-img/whitepaper/br/Slide23.PNG`}
+                                                      src={`/game-img/whitepaper/br/Slide23.svg`}
                                                       alt="icon-dashboard"
                                                       width={1000}
                                                       height={720}
@@ -245,7 +245,7 @@ export default function Whitepaper(props: WhitepaperProps) {
                                                   if (v == 'Affiliate program') {
                                                     return (
                                                       <Image
-                                                        src={`/game-img/whitepaper/br/Slide24.PNG`}
+                                                        src={`/game-img/whitepaper/br/Slide24.svg`}
                                                         alt="icon-dashboard"
                                                         width={1000}
                                                         height={720}
@@ -255,7 +255,7 @@ export default function Whitepaper(props: WhitepaperProps) {
                                                     if (v == 'Developer') {
                                                       return (
                                                         <Image
-                                                          src={`/game-img/whitepaper/br/Slide25.PNG`}
+                                                          src={`/game-img/whitepaper/br/Slide25.svg`}
                                                           alt="icon-dashboard"
                                                           width={1000}
                                                           height={720}
