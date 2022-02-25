@@ -121,7 +121,7 @@ export default function Index() {
         return <div className="overflow-y-auto h-[675px] my-3 animate__animated animate__fadeIn"><Whitepaper setActivePage={setActivePage} selectOption={selectOption} language={language} /></div>
 
       case 8:
-        return <div className="overflow-y-auto h-[675px] my-3 animate__animated animate__fadeIn"><Presale setActivePage={setActivePage} /></div>
+        return <div className="overflow-y-auto h-[675px] my-3 animate__animated animate__fadeIn"><Presale setActivePage={setActivePage} language={language} /></div>
 
       default:
         return <Home connect={() => setConnectMetamask(Math.random())} language={language} />;
@@ -162,6 +162,7 @@ export default function Index() {
         <div className="cursor-pointer animate-pulse hover:text-[#4E7C7C]" onClick={() => (setActivePage(7), setSelectOption(language === 'en' ? 'Rewards' : 'Recompensas'))}>{language === 'en' ? 'Rewards' : 'Recompensas'}</div>
         <div className="cursor-pointer animate-pulse hover:text-[#4E7C7C]" onClick={() => (setActivePage(7), setSelectOption(language === 'en' ? 'Affiliate program' : 'Programa de afiliados'))}>{language === 'en' ? 'Affiliate program' : 'Programa de afiliados'}</div>
         <div className="cursor-pointer animate-pulse hover:text-[#4E7C7C]" onClick={() => (setActivePage(7), setSelectOption(language === 'en' ? 'Developer' : 'Desenvolvedor'))}>{language === 'en' ? 'Developer' : 'Desenvolvedor'}</div>
+        <div className="cursor-pointer animate-pulse hover:text-[#4E7C7C]" onClick={() => (setActivePage(8))}>{language === 'en' ? 'Presale' : 'Pré-venda'}</div>
       </div>
       <div className="absolute top-3 right-2 h-8 flex gap-2">
         <div className={`${language === 'en' ? 'opacity-100' : 'opacity-25'} hover:opacity-100 cursor-pointer`}

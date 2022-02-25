@@ -3,6 +3,7 @@ import Notify from "../Notify";
 
 interface PresaleProps {
   setActivePage: (v: number) => void
+  language?: string
 }
 
 export default function Presale(props: PresaleProps) {
@@ -23,31 +24,31 @@ export default function Presale(props: PresaleProps) {
             className="cursor-pointer"
           />
         </div>
-        <span className="text-4xl font-PassionOne">Presale</span>
+        <span className="text-4xl font-PassionOne">{props.language === 'en' ? 'Presale' : 'Pré-venda'}</span>
       </div>
       <div className="mt-3 text-justify flex flex-col gap-4 font-PassionOne p-3">
         <div>
-          IGC token pre-sales are open.
-          A total of 1,000,000 tokens were earmarked for sales at a fixed price of <span className="text-yellow-400">0.10 BUSD</span>.
+          {props.language === 'en' ? 'IGC token pre-sales are open.' : 'As pré-vendas do token IGC estão abertas. '}
+          {props.language === 'en' ? 'A total of 1,000,000 tokens were earmarked for sales at a fixed price of ' : 'Um total de 1.000.000 de tokens foram destinados para vendas a um preço fixo de'} <span className="text-yellow-400">0.10 BUSD</span>.
         </div>
-        <div>
+        {/* <div>
           We currently have available:
         </div>
         <div className="text-4xl text-center text-yellow-400">
           995,000 IGC
-        </div>
-        <div>
+        </div> */}
+        {/* <div>
           100% of the amount raised from the pre-sale of the tokens will be used to provide more liquidity on the IGC listing on PancakeSwap.
-        </div>
+        </div> */}
         <div>
-          All BUSD amounts sent to this official address:
+          {props.language === 'en' ? 'All BUSD amounts sent to this official address:' : 'Todos os valores de BUSD enviados para este endereço oficial:'}
         </div>
         <div className="text-xl text-center text-yellow-400 cursor-pointer"
           onClick={() => { navigator.clipboard.writeText(officialAddress), notify('Official address for the purchase of the copied IGC.', 'success') }}>
           {officialAddress}
         </div>
         <div>
-          You will receive the IGC back at the same Metamask address you sent the BUSD from.
+          {props.language === 'en' ? 'You will receive the IGC back at the same Metamask address you sent the BUSD from.' : 'Você receberá o IGC de volta no mesmo endereço Metamask de onde enviou o BUSD.'}
         </div>
       </div>
     </div>
