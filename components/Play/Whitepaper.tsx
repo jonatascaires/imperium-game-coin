@@ -306,11 +306,11 @@ export default function Whitepaper(props: WhitepaperProps) {
         <div className="flex justify-between font-PassionOne -mt-3 px-2">
           <div className="flex flex-col text-left cursor-pointer" onClick={() => setSelectedOption(selectedOption == 'Introduction 1/3' ? options[options.length - 1] : options[options.indexOf(selectedOption) - 1])}>
             <span className="text-base text-gray-500">{props.language === 'en' ? 'Previous' : 'Anterior'}</span>
-            <span className="text-xl -mt-2">{selectedOption == 'Introduction 1/3' ? options[options.length - 1] : options[options.indexOf(selectedOption) - 1]}</span>
+            <span className="text-xl -mt-2">{selectedOption == (props.language === 'en' ? 'Introduction 1/3' : 'Introdução 1/3') ? options[options.length - 1] : options[options.indexOf(selectedOption) - 1]}</span>
           </div>
           <div className="flex flex-col text-right cursor-pointer" onClick={() => setSelectedOption(selectedOption == 'Developer' ? options[0] : options[options.indexOf(selectedOption) + 1])}>
             <span className="text-base text-gray-500">{props.language === 'en' ? 'Next' : 'Próximo'}</span>
-            <span className="text-xl -mt-2">{selectedOption == 'Developer' ? options[0] : options[options.indexOf(selectedOption) + 1]}</span>
+            <span className="text-xl -mt-2">{selectedOption == (props.language === 'en' ? 'Developer' : 'Desenvolvedor') ? options[0] : options[options.indexOf(selectedOption) + 1]}</span>
           </div>
         </div>
       </div>
