@@ -118,7 +118,7 @@ export default function Index() {
         return <div className="overflow-y-auto h-[571px] my-3 animate__animated animate__fadeIn"><StakingRescue contract={contract} address={address} checkBalance={checkBalance} language={language} /></div>
 
       case 7:
-        return <div className="overflow-y-auto h-[675px] my-3 animate__animated animate__fadeIn"><Whitepaper setActivePage={setActivePage} selectOption={selectOption} /></div>
+        return <div className="overflow-y-auto h-[675px] my-3 animate__animated animate__fadeIn"><Whitepaper setActivePage={setActivePage} selectOption={selectOption} language={language} /></div>
 
       case 8:
         return <div className="overflow-y-auto h-[675px] my-3 animate__animated animate__fadeIn"><Presale setActivePage={setActivePage} /></div>
@@ -151,17 +151,17 @@ export default function Index() {
         Your browser does not support the video tag.
         </video>
       </div>
-      <div className={`absolute top-2 h-8 flex justify-center items-center gap-8 font-OdibeeSans w-screen text-xl text-white ${activePage > 0 && 'hidden'}`}>
-        <div className="cursor-pointer animate-pulse hover:text-[#4E7C7C]" onClick={() => (setActivePage(7), setSelectOption('Introduction 1/3'))}>{language === 'en' ? 'Introduction' : 'Introdução'}</div>
+      <div className={`absolute top-2 h-8 flex justify-center items-center gap-6 font-OdibeeSans w-screen text-xl text-white ${activePage > 0 && 'hidden'}`}>
+        <div className="cursor-pointer animate-pulse hover:text-[#4E7C7C]" onClick={() => (setActivePage(7), setSelectOption(language === 'en' ? 'Introduction 1/3' : 'Introdução 1/3'))}>{language === 'en' ? 'Introduction' : 'Introdução'}</div>
         <div className="cursor-pointer animate-pulse hover:text-[#4E7C7C]" onClick={() => (setActivePage(7), setSelectOption('Token IGC'))}>Token IGC</div>
-        <div className="cursor-pointer animate-pulse hover:text-[#4E7C7C]" onClick={() => (setActivePage(7), setSelectOption('Savings'))}>{language === 'en' ? 'Savings' : 'Poupança'}</div>
-        <div className="cursor-pointer animate-pulse hover:text-[#4E7C7C]" onClick={() => (setActivePage(7), setSelectOption('The game 1/2'))}>{language === 'en' ? 'The game' : 'O jogo'}</div>
-        <div className="cursor-pointer animate-pulse hover:text-[#4E7C7C]" onClick={() => (setActivePage(7), setSelectOption('Earnings simulation 1/12'))}>{language === 'en' ? 'Earnings simulation' : 'Simulação de ganhos'}</div>
-        <div className="cursor-pointer animate-pulse hover:text-[#4E7C7C]" onClick={() => (setActivePage(7), setSelectOption('Truck upgrade'))}>{language === 'en' ? 'Truck upgrade' : 'Upgrade do caminhão'}</div>
-        <div className="cursor-pointer animate-pulse hover:text-[#4E7C7C]" onClick={() => (setActivePage(7), setSelectOption('Truck maintenance'))}>{language === 'en' ? 'Truck maintenance' : 'Manutenção do caminhão'}</div>
-        <div className="cursor-pointer animate-pulse hover:text-[#4E7C7C]" onClick={() => (setActivePage(7), setSelectOption('Rewards'))}>{language === 'en' ? 'Rewards' : 'Recompensas'}</div>
-        <div className="cursor-pointer animate-pulse hover:text-[#4E7C7C]" onClick={() => (setActivePage(7), setSelectOption('Affiliate program'))}>{language === 'en' ? 'Affiliate program' : 'Programa de afiliados'}</div>
-        <div className="cursor-pointer animate-pulse hover:text-[#4E7C7C]" onClick={() => (setActivePage(7), setSelectOption('Developer'))}>{language === 'en' ? 'Developer' : 'Desenvolvedor'}</div>
+        <div className="cursor-pointer animate-pulse hover:text-[#4E7C7C]" onClick={() => (setActivePage(7), setSelectOption(language === 'en' ? 'Savings' : 'Poupança'))}>{language === 'en' ? 'Savings' : 'Poupança'}</div>
+        <div className="cursor-pointer animate-pulse hover:text-[#4E7C7C]" onClick={() => (setActivePage(7), setSelectOption(language === 'en' ? 'The game 1/2' : 'O jogo 1/2'))}>{language === 'en' ? 'The game' : 'O jogo'}</div>
+        <div className="cursor-pointer animate-pulse hover:text-[#4E7C7C]" onClick={() => (setActivePage(7), setSelectOption(language === 'en' ? 'Earnings simulation 1/12' : 'Simulação de ganhos 1/12'))}>{language === 'en' ? 'Earnings simulation' : 'Simulação de ganhos'}</div>
+        <div className="cursor-pointer animate-pulse hover:text-[#4E7C7C]" onClick={() => (setActivePage(7), setSelectOption(language === 'en' ? 'Truck upgrade' : 'Upgrade do caminhão'))}>{language === 'en' ? 'Truck upgrade' : 'Upgrade do caminhão'}</div>
+        <div className="cursor-pointer animate-pulse hover:text-[#4E7C7C]" onClick={() => (setActivePage(7), setSelectOption(language === 'en' ? 'Truck maintenance' : 'Manutenção do caminhão'))}>{language === 'en' ? 'Truck maintenance' : 'Manutenção do caminhão'}</div>
+        <div className="cursor-pointer animate-pulse hover:text-[#4E7C7C]" onClick={() => (setActivePage(7), setSelectOption(language === 'en' ? 'Rewards' : 'Recompensas'))}>{language === 'en' ? 'Rewards' : 'Recompensas'}</div>
+        <div className="cursor-pointer animate-pulse hover:text-[#4E7C7C]" onClick={() => (setActivePage(7), setSelectOption(language === 'en' ? 'Affiliate program' : 'Programa de afiliados'))}>{language === 'en' ? 'Affiliate program' : 'Programa de afiliados'}</div>
+        <div className="cursor-pointer animate-pulse hover:text-[#4E7C7C]" onClick={() => (setActivePage(7), setSelectOption(language === 'en' ? 'Developer' : 'Desenvolvedor'))}>{language === 'en' ? 'Developer' : 'Desenvolvedor'}</div>
       </div>
       <div className="absolute top-3 right-2 h-8 flex gap-2">
         <div className={`${language === 'en' ? 'opacity-100' : 'opacity-25'} hover:opacity-100 cursor-pointer`}
