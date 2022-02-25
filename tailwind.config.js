@@ -13,8 +13,7 @@ module.exports = {
         PassionOne: ["Passion One", "cursive"],
       },
       backgroundImage: theme => ({
-        'truck-img': "url('/truck-bg5.jpg')",
-        'truck-img2': "url('/truck-bg4.jpg')",
+        'truck-img': "url('/bg_mobile.png')",
       })
     },
   },
