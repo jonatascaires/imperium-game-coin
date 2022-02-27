@@ -186,10 +186,36 @@ export default function Index() {
           />
         </div>
       </div>
+      <div className="flex absolute top-3 left-2 h-8 gap-2">
+        <a target="_blank" href="https://www.instagram.com/imperiumgamecoin" rel="noopener noreferrer" className="opacity-80 hover:opacity-100 cursor-pointer">
+          <Image
+            src={`/game-img/instagram.svg`}
+            alt="en"
+            width={18}
+            height={18}
+          />
+        </a>
+        <a target="_blank" href="https://t.me/+qMaL9om-oHAzOTFh" rel="noopener noreferrer" className="opacity-80 hover:opacity-100 cursor-pointer">
+          <Image
+            src={`/game-img/telegram.svg`}
+            alt="en"
+            width={18}
+            height={18}
+          />
+        </a>
+        <a target="_blank" href="https://www.youtube.com/channel/UCnszNhj-wG66itK_PNPh94A" rel="noopener noreferrer" className="opacity-80 hover:opacity-100 cursor-pointer -mt-0.5">
+          <Image
+            src={`/game-img/youtube.svg`}
+            alt="en"
+            width={23}
+            height={23}
+          />
+        </a>
+      </div>
       <div className={`flex absolute bottom-0 h-8 bg-black opacity-50 justify-center items-center gap-2 font-OdibeeSans w-screen text-xl text-white ${activePage > 0 && 'hidden'}`}>
         <span>{language === 'en' ? 'Official Imperium Truck Token' : 'Token Oficial Imperium Truck'}:</span>
         <span className="hidden sm:block text-blue-300 cursor-pointer" onClick={() => { navigator.clipboard.writeText(contractAddress), notify('Official contract copied!', 'success') }}>{contractAddress}</span>
-        <span className="text-blue-300 cursor-pointer sm:hidden" onClick={() => { navigator.clipboard.writeText(contractAddress), notify('Official contract copied!', 'success') }}>{contractAddress.substring(0, 10)+'…'+contractAddress.substring(contractAddress.length - 10)}</span>
+        <span className="text-blue-300 cursor-pointer sm:hidden" onClick={() => { navigator.clipboard.writeText(contractAddress), notify('Official contract copied!', 'success') }}>{contractAddress.substring(0, 10) + '…' + contractAddress.substring(contractAddress.length - 10)}</span>
       </div>
     </>
   )
