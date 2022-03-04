@@ -41,14 +41,14 @@ export default function Presale(props: PresaleProps) {
           100% of the amount raised from the pre-sale of the tokens will be used to provide more liquidity on the IGC listing on PancakeSwap.
         </div> */}
         <div>
-          {props.language === 'en' ? 'All BUSD amounts sent to this official address:' : 'Todos os valores de BUSD enviados para este endereço oficial:'}
+          {props.language === 'en' ? 'All BUSD or BNB amounts sent to this official address:' : 'Todos os valores de BUSD ou BNB enviados para este endereço oficial:'}
         </div>
         <div className="text-xl text-center text-yellow-400 cursor-pointer"
           onClick={() => { navigator.clipboard.writeText(officialAddress), notify('Official address for the purchase of the copied IGC.', 'success') }}>
           {officialAddress}
         </div>
         <div>
-          {props.language === 'en' ? 'You will receive the IGC back at the same Metamask address you sent the BUSD from.' : 'Você receberá o IGC de volta no mesmo endereço Metamask de onde enviou o BUSD.'}
+          {props.language === 'en' ? 'You will receive the IGC back at the same Metamask address you sent the BUSD or BNB from.' : 'Você receberá o IGC de volta no mesmo endereço Metamask do qual enviou o BUSD ou BNB.'}
         </div>
       </div>
     </div>
