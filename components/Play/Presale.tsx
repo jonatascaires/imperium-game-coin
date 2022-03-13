@@ -17,7 +17,7 @@ export default function Presale(props: PresaleProps) {
       <div className="flex items-center gap-3">
         <div onClick={() => props.setActivePage(0)}>
           <Image
-            src={`/game-img/back.svg`}
+            src={`/game-img/close.svg`}
             alt="icon-dashboard"
             width={14}
             height={24}

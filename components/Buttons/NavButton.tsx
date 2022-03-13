@@ -19,7 +19,7 @@ export default function NavButton(props: ButtonProps) {
     <div className="relative">
       <div className={`flex justify-center items-center 
               ${fontSize}  cursor-pointer 
-              ${!props.inative && 'bg-[#272727] bg-opacity-30 border-2 border-[#81E8E8]'} 
+              ${!props.inative && 'bg-[#272727] bg-opacity-30 border-2 border-[#F28B0C]'} 
               ${props.className}`}
         onClick={props.action}>
         {props.name}

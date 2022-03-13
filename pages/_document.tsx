@@ -22,7 +22,7 @@ class MyDocument extends Document {
             href="https://fonts.googleapis.com/css2?family=Passion+One"
             rel="stylesheet"
           />
-          <script src="//code-sa1.jivosite.com/widget/7Zp0kKp62J" async></script>
+          {/* <script src="//code-sa1.jivosite.com/widget/7Zp0kKp62J" async></script> */}
         </Head>
         <body>
           <Main />

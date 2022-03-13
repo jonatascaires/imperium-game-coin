@@ -14,7 +14,7 @@ export default function NavButton(props: ButtonProps) {
     <div className="relative">
       <div className={`flex justify-center items-center 
               text-xl w-52 h-10 rounded-xl font-PassionOne  cursor-pointer 
-              bg-[#272727] border-2 border-[#81E8E8] 
+              bg-[#272727] border-2 border-[#F28B0C] 
               ${props.className}`}
         onClick={!props.loading ? props.action : () => ''}>
         <div className="flex gap-3">

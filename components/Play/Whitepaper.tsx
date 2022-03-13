@@ -9,8 +9,8 @@ interface WhitepaperProps {
 
 export default function Whitepaper(props: WhitepaperProps) {
 
-  const en = ['Introduction 1/3', 'Introduction 2/3', 'Introduction 3/3', 'Token IGC', 'Savings', 'The game 1/2', 'The game 2/2', 'Earnings simulation 1/12', 'Earnings simulation 2/12', 'Earnings simulation 3/12', 'Earnings simulation 4/12', 'Earnings simulation 5/12', 'Earnings simulation 6/12', 'Earnings simulation 7/12', 'Earnings simulation 8/12', 'Earnings simulation 9/12', 'Earnings simulation 10/12', 'Earnings simulation 11/12', 'Earnings simulation 12/12', 'Truck upgrade', 'Truck maintenance 1/2', 'Truck maintenance 2/2', 'Rewards', 'Affiliate program', 'Developer']
-  const br = ['Introdução 1/3', 'Introdução 2/3', 'Introdução 3/3', 'Token IGC', 'Poupança', 'O jogo 1/2', 'O jogo 2/2', 'Simulação de ganhos 1/12', 'Simulação de ganhos 2/12', 'Simulação de ganhos 3/12', 'Simulação de ganhos 4/12', 'Simulação de ganhos 5/12', 'Simulação de ganhos 6/12', 'Simulação de ganhos 7/12', 'Simulação de ganhos 8/12', 'Simulação de ganhos 9/12', 'Simulação de ganhos 10/12', 'Simulação de ganhos 11/12', 'Simulação de ganhos 12/12', 'Upgrade do caminhão', 'Manutenção do caminhão 1/2', 'Manutenção do caminhão 2/2', 'Recompensas', 'Programa de afiliados', 'Desenvolvedor']
+  const en = ['Introduction 1/3', 'Introduction 2/3', 'Introduction 3/3', 'Token IGC', 'Savings', 'The game', 'Types of trucks', 'Truck upgrade', 'Fuel', 'Repair', 'Rewards']
+  const br = ['Introdução 1/3', 'Introdução 2/3', 'Introdução 3/3', 'Token IGC', 'Poupança', 'O jogo', 'Tipos de caminhões', 'Upgrade do caminhão', 'Combustível', 'Reparo', 'Recompensas']
 
   const options = props.language === 'en' ? en : br
 
@@ -18,8 +18,8 @@ export default function Whitepaper(props: WhitepaperProps) {
 
   useEffect(() => {
     let newOption = selectedOption
-    if(options.indexOf(newOption) == -1){
-      if(props.language == 'en'){
+    if (options.indexOf(newOption) == -1) {
+      if (props.language == 'en') {
         setSelectedOption(en[br.indexOf(newOption)])
       } else {
         setSelectedOption(br[en.indexOf(newOption)])
@@ -78,7 +78,7 @@ export default function Whitepaper(props: WhitepaperProps) {
                 />
               )
             } else
-              if (v == (props.language === 'en' ? 'The game 1/2' : 'O jogo 1/2')) {
+              if (v == (props.language === 'en' ? 'The game' : 'O jogo')) {
                 return (
                   <Image
                     src={`/game-img/whitepaper/${props.language}/Slide6.svg`}
@@ -88,7 +88,7 @@ export default function Whitepaper(props: WhitepaperProps) {
                   />
                 )
               } else
-                if (v == (props.language === 'en' ? 'The game 2/2' : 'O jogo 2/2')) {
+                if (v == (props.language === 'en' ? 'Types of trucks' : 'Tipos de caminhões')) {
                   return (
                     <Image
                       src={`/game-img/whitepaper/${props.language}/Slide7.svg`}
@@ -98,186 +98,46 @@ export default function Whitepaper(props: WhitepaperProps) {
                     />
                   )
                 } else
-                  if (v == (props.language === 'en' ? 'Earnings simulation 1/12' : 'Simulação de ganhos 1/12')) {
+                  if (v == (props.language === 'en' ? 'Truck upgrade' : 'Upgrade do caminhão')) {
                     return (
                       <Image
-                        src={`/game-img/whitepaper/${props.language}/Slide8.svg`}
+                        src={`/game-img/whitepaper/${props.language}/Slide20.svg`}
                         alt="icon-dashboard"
                         width={1000}
                         height={720}
                       />
                     )
                   } else
-                    if (v == (props.language === 'en' ? 'Earnings simulation 2/12' : 'Simulação de ganhos 2/12')) {
+                    if (v == (props.language === 'en' ? 'Fuel' : 'Combustível')) {
                       return (
                         <Image
-                          src={`/game-img/whitepaper/${props.language}/Slide9.svg`}
+                          src={`/game-img/whitepaper/${props.language}/Slide21.svg`}
                           alt="icon-dashboard"
                           width={1000}
                           height={720}
                         />
                       )
                     } else
-                      if (v == (props.language === 'en' ? 'Earnings simulation 3/12' : 'Simulação de ganhos 3/12')) {
+                      if (v == (props.language === 'en' ? 'Repair' : 'Reparo')) {
                         return (
                           <Image
-                            src={`/game-img/whitepaper/${props.language}/Slide10.svg`}
+                            src={`/game-img/whitepaper/${props.language}/Slide22.svg`}
                             alt="icon-dashboard"
                             width={1000}
                             height={720}
                           />
                         )
                       } else
-                        if (v == (props.language === 'en' ? 'Earnings simulation 4/12' : 'Simulação de ganhos 4/12')) {
+                        if (v == (props.language === 'en' ? 'Rewards' : 'Recompensas')) {
                           return (
                             <Image
-                              src={`/game-img/whitepaper/${props.language}/Slide11.svg`}
+                              src={`/game-img/whitepaper/${props.language}/Slide23.svg`}
                               alt="icon-dashboard"
                               width={1000}
                               height={720}
                             />
                           )
-                        } else
-                          if (v == (props.language === 'en' ? 'Earnings simulation 5/12' : 'Simulação de ganhos 5/12')) {
-                            return (
-                              <Image
-                                src={`/game-img/whitepaper/${props.language}/Slide12.svg`}
-                                alt="icon-dashboard"
-                                width={1000}
-                                height={720}
-                              />
-                            )
-                          } else
-                            if (v == (props.language === 'en' ? 'Earnings simulation 6/12' : 'Simulação de ganhos 6/12')) {
-                              return (
-                                <Image
-                                  src={`/game-img/whitepaper/${props.language}/Slide13.svg`}
-                                  alt="icon-dashboard"
-                                  width={1000}
-                                  height={720}
-                                />
-                              )
-                            } else
-                              if (v == (props.language === 'en' ? 'Earnings simulation 7/12' : 'Simulação de ganhos 7/12')) {
-                                return (
-                                  <Image
-                                    src={`/game-img/whitepaper/${props.language}/Slide14.svg`}
-                                    alt="icon-dashboard"
-                                    width={1000}
-                                    height={720}
-                                  />
-                                )
-                              } else
-                                if (v == (props.language === 'en' ? 'Earnings simulation 8/12' : 'Simulação de ganhos 8/12')) {
-                                  return (
-                                    <Image
-                                      src={`/game-img/whitepaper/${props.language}/Slide15.svg`}
-                                      alt="icon-dashboard"
-                                      width={1000}
-                                      height={720}
-                                    />
-                                  )
-                                } else
-                                  if (v == (props.language === 'en' ? 'Earnings simulation 9/12' : 'Simulação de ganhos 9/12')) {
-                                    return (
-                                      <Image
-                                        src={`/game-img/whitepaper/${props.language}/Slide16.svg`}
-                                        alt="icon-dashboard"
-                                        width={1000}
-                                        height={720}
-                                      />
-                                    )
-                                  } else
-                                    if (v == (props.language === 'en' ? 'Earnings simulation 10/12' : 'Simulação de ganhos 10/12')) {
-                                      return (
-                                        <Image
-                                          src={`/game-img/whitepaper/${props.language}/Slide17.svg`}
-                                          alt="icon-dashboard"
-                                          width={1000}
-                                          height={720}
-                                        />
-                                      )
-                                    } else
-                                      if (v == (props.language === 'en' ? 'Earnings simulation 11/12' : 'Simulação de ganhos 11/12')) {
-                                        return (
-                                          <Image
-                                            src={`/game-img/whitepaper/${props.language}/Slide18.svg`}
-                                            alt="icon-dashboard"
-                                            width={1000}
-                                            height={720}
-                                          />
-                                        )
-                                      } else
-                                        if (v == (props.language === 'en' ? 'Earnings simulation 12/12' : 'Simulação de ganhos 12/12')) {
-                                          return (
-                                            <Image
-                                              src={`/game-img/whitepaper/${props.language}/Slide19.svg`}
-                                              alt="icon-dashboard"
-                                              width={1000}
-                                              height={720}
-                                            />
-                                          )
-                                        } else
-                                          if (v == (props.language === 'en' ? 'Truck upgrade' : 'Upgrade do caminhão')) {
-                                            return (
-                                              <Image
-                                                src={`/game-img/whitepaper/${props.language}/Slide20.svg`}
-                                                alt="icon-dashboard"
-                                                width={1000}
-                                                height={720}
-                                              />
-                                            )
-                                          } else
-                                            if (v == (props.language === 'en' ? 'Truck maintenance 1/2' : 'Manutenção do caminhão 1/2')) {
-                                              return (
-                                                <Image
-                                                  src={`/game-img/whitepaper/${props.language}/Slide21.svg`}
-                                                  alt="icon-dashboard"
-                                                  width={1000}
-                                                  height={720}
-                                                />
-                                              )
-                                            } else
-                                              if (v == (props.language === 'en' ? 'Truck maintenance 2/2' : 'Manutenção do caminhão 2/2')) {
-                                                return (
-                                                  <Image
-                                                    src={`/game-img/whitepaper/${props.language}/Slide22.svg`}
-                                                    alt="icon-dashboard"
-                                                    width={1000}
-                                                    height={720}
-                                                  />
-                                                )
-                                              } else
-                                                if (v == (props.language === 'en' ? 'Rewards' : 'Recompensas')) {
-                                                  return (
-                                                    <Image
-                                                      src={`/game-img/whitepaper/${props.language}/Slide23.svg`}
-                                                      alt="icon-dashboard"
-                                                      width={1000}
-                                                      height={720}
-                                                    />
-                                                  )
-                                                } else
-                                                  if (v == (props.language === 'en' ? 'Affiliate program' : 'Programa de afiliados')) {
-                                                    return (
-                                                      <Image
-                                                        src={`/game-img/whitepaper/${props.language}/Slide24.svg`}
-                                                        alt="icon-dashboard"
-                                                        width={1000}
-                                                        height={720}
-                                                      />
-                                                    )
-                                                  } else
-                                                    if (v == (props.language === 'en' ? 'Developer' : 'Desenvolvedor')) {
-                                                      return (
-                                                        <Image
-                                                          src={`/game-img/whitepaper/${props.language}/Slide25.svg`}
-                                                          alt="icon-dashboard"
-                                                          width={1000}
-                                                          height={720}
-                                                        />
-                                                      )
-                                                    }
+                        }
   }
 
   return (
@@ -295,7 +155,7 @@ export default function Whitepaper(props: WhitepaperProps) {
         <span className="text-4xl font-PassionOne">Whitepaper</span>
       </div>
       <div className="mt-3 text-justify flex flex-col gap-4">
-        <select className="text-xl text-blue-200 bg-transparent cursor-pointer"
+        <select className="text-xl text-[#F28B0C] opacity-70 bg-transparent cursor-pointer"
           value={selectedOption}
           onChange={e => setSelectedOption(e.target.value)}>
           {options.map((opt, key) => <option className="bg-zinc-800 text-base" key={key} value={opt}>{opt}</option>)}
@@ -304,13 +164,13 @@ export default function Whitepaper(props: WhitepaperProps) {
           {renderText(selectedOption)}
         </div>
         <div className="flex justify-between font-PassionOne -mt-3 px-2">
-          <div className="flex flex-col text-left cursor-pointer" onClick={() => setSelectedOption(selectedOption == 'Introduction 1/3' ? options[options.length - 1] : options[options.indexOf(selectedOption) - 1])}>
-            <span className="text-base text-gray-500">{props.language === 'en' ? 'Previous' : 'Anterior'}</span>
+          <div className="flex flex-col text-left cursor-pointer" onClick={() => setSelectedOption(selectedOption == (props.language === 'en' ? 'Introduction 1/3' : 'Introdução 1/3') ? options[options.length - 1] : options[options.indexOf(selectedOption) - 1])}>
+            <span className="text-base text-[#F28B0C] opacity-70">{props.language === 'en' ? 'Previous' : 'Anterior'}</span>
             <span className="text-xl -mt-2">{selectedOption == (props.language === 'en' ? 'Introduction 1/3' : 'Introdução 1/3') ? options[options.length - 1] : options[options.indexOf(selectedOption) - 1]}</span>
           </div>
-          <div className="flex flex-col text-right cursor-pointer" onClick={() => setSelectedOption(selectedOption == 'Developer' ? options[0] : options[options.indexOf(selectedOption) + 1])}>
-            <span className="text-base text-gray-500">{props.language === 'en' ? 'Next' : 'Próximo'}</span>
-            <span className="text-xl -mt-2">{selectedOption == (props.language === 'en' ? 'Developer' : 'Desenvolvedor') ? options[0] : options[options.indexOf(selectedOption) + 1]}</span>
+          <div className="flex flex-col text-right cursor-pointer" onClick={() => setSelectedOption(selectedOption == (props.language === 'en' ? 'Rewards' : 'Recompensas') ? options[0] : options[options.indexOf(selectedOption) + 1])}>
+            <span className="text-base text-[#F28B0C] opacity-70">{props.language === 'en' ? 'Next' : 'Próximo'}</span>
+            <span className="text-xl -mt-2">{selectedOption == (props.language === 'en' ? 'Rewards' : 'Recompensas') ? options[0] : options[options.indexOf(selectedOption) + 1]}</span>
           </div>
         </div>
       </div>
