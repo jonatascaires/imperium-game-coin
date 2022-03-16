@@ -37,7 +37,7 @@ export default function Index() {
 
   const notify = Notify()
 
-  const [language, setLanguage] = useState('br')
+  const [language, setLanguage] = useState('en')
 
   const [connectMetamask, setConnectMetamask] = useState(0)
   const { contract, address, notifyMsg, contractAddress, addressUser } = ConnectionWithContract(connectMetamask)
