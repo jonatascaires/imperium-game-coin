@@ -205,7 +205,14 @@ export default function Index() {
         <a target="_blank" href="https://t.me/+qMaL9om-oHAzOTFh" rel="noopener noreferrer" className="opacity-80 hover:opacity-100 cursor-pointer">
           <Image
             src={`/game-img/telegram.svg`}
-            alt="en"
+            alt="telegram-g1"
+            width={18}
+            height={18}
+          />
+        </a><a target="_blank" href="https://t.me/+nJaDXsD53wBkNGE5" rel="noopener noreferrer" className="opacity-80 hover:opacity-100 cursor-pointer">
+          <Image
+            src={`/game-img/telegram.svg`}
+            alt="telegram-g2"
             width={18}
             height={18}
           />
