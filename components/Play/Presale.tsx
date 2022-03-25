@@ -23,6 +23,8 @@ export default function Presale(props: PresaleProps) {
 
   const [renderAgain, setRenderAgain] = useState(0)
 
+  const [inputValue, setInputValue] = useState("0.1")
+
   useEffect(() => {
     props.contract.methods.qtdPresale().call().then((qtdPresale: number) => {
       setQtdPresale(qtdPresale / 100000000)
@@ -33,7 +35,7 @@ export default function Presale(props: PresaleProps) {
   }, [renderAgain])
 
   function buyToken() {
-    props.contract.methods.buyToken().send({ from: props.address, value: Web3.utils.toWei("0.1", "ether") }).then((resp: any) => {
+    props.contract.methods.buyToken().send({ from: props.address, value: Web3.utils.toWei(inputValue, "ether") }).then((resp: any) => {
       notify(resp.events.EventBuy.returnValues.message, 'success')
       props.checkBalance()
       setRenderAgain(Math.random())
@@ -77,6 +79,9 @@ export default function Presale(props: PresaleProps) {
           {props.language === 'en' ? '100% of the amount raised from the pre-sale of the tokens will be used to provide liquidity on the IGC listing.' : '100% do valor arrecadado com a pré-venda dos tokens será usado para fornecer liquidez na listagem do IGC.'}
         </div>
         <div className="w-full flex justify-center mt-2">
+          <input type="number" value={inputValue} onChange={e => setInputValue(e.target.value)} className="text-white text-center bg-black opacity-40 rounded-lg h-10" />
+        </div>
+        <div className="w-full flex justify-center">
           <BuyButton action={() => buyToken()} className="animate-pulse">{props.language === 'en' ? 'Buy Token' : 'Comprar Token'}</BuyButton>
         </div>
       </div>
