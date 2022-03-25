@@ -8,8 +8,7 @@ interface StakingProps {
   contract: any
   address: string
   checkBalance: () => void
-  language?: string
-}
+  language?: string}
 
 export default function Staking(props: StakingProps) {
 

@@ -13,6 +13,9 @@ interface CardRoadProps {
 
 export default function CardRoad(props: CardRoadProps) {
 
+  //time testnet = 60
+  //time mainnet = 86400
+
   const [name, setName] = useState("")
   const [uniqueId, setUniqueId] = useState(0)
   const [level, setLevel] = useState(0)
@@ -26,15 +29,15 @@ export default function CardRoad(props: CardRoadProps) {
 
   const [loadingPage, setLoadingPage] = useState(true)
 
-  let imgTruck = '/game-img/silver-truck.svg'
-  if (name == 'Silver') {
-    imgTruck = `/game-img/silver-truck.svg`
+  let imgTruck = '/game-img/NFT/common-1.png'
+  if (name == 'Common') {
+    imgTruck = `/game-img/NFT/common-${level}.png`
   } else
-    if (name == 'Gold') {
-      imgTruck = `/game-img/gold-truck.svg`
+    if (name == 'Rare') {
+      imgTruck = `/game-img/NFT/rare-${level}.png`
     } else
-      if (name == 'Ruby') {
-        imgTruck = `/game-img/ruby-truck.svg`
+      if (name == 'Epic') {
+        imgTruck = `/game-img/NFT/epic-${level}.png`
       }
 
   useEffect(() => {
@@ -56,6 +59,7 @@ export default function CardRoad(props: CardRoadProps) {
   const notify = Notify()
 
   function upgrade(idTruck: number) {
+    console.log(idTruck)
     if (props.contract) {
       setLoadingUpgrade(true)
       props.contract.methods.truckUpgrade(idTruck).send({ from: props.address }).then((resp: any) => {
@@ -86,28 +90,28 @@ export default function CardRoad(props: CardRoadProps) {
   }
 
   let withdrawValue = 0
-  if (name == 'Silver') {
+  if (name == 'Common') {
     withdrawValue = 75 * level
   } else
-    if (name == 'Gold') {
+    if (name == 'Rare') {
       withdrawValue = 105 * level
     } else
-      if (name == 'Ruby') {
+      if (name == 'Epic') {
         withdrawValue = 155 * level
       }
 
   const countTimeToFuel = () => {
     let maxTimeFuel = 0
-    if (name === 'Silver') {
+    if (name === 'Common') {
       maxTimeFuel = 9
     } else
-      if (name === 'Gold') {
+      if (name === 'Rare') {
         maxTimeFuel = 7
       } else
-        if (name === 'Ruby') {
+        if (name === 'Epic') {
           maxTimeFuel = 5
         }
-    let timeFuel = fuelTime > Date.now() ? Math.floor((((fuelTime - Date.now()) / 1000) / 86400)) : 0
+    let timeFuel = fuelTime > Date.now() ? Math.floor((((fuelTime - Date.now()) / 1000) / 60)) : 0
     if (timeFuel > 0) {
       return (Math.floor((timeFuel / maxTimeFuel) * 100))
     } else {
@@ -115,20 +119,18 @@ export default function CardRoad(props: CardRoadProps) {
     }
   }
 
-  console.log(fuelTime - Date.now())
-
   const countTimeRepair = () => {
     let maxTimeRepair = 0
-    if (name === 'Silver') {
+    if (name === 'Common') {
       maxTimeRepair = 150
     } else
-      if (name === 'Gold') {
+      if (name === 'Rare') {
         maxTimeRepair = 144
       } else
-        if (name === 'Ruby') {
+        if (name === 'Epic') {
           maxTimeRepair = 114
         }
-    let timeRepair = repairTime > Date.now() ? Math.floor((((repairTime - Date.now()) / 1000) / 86400)) : 0
+    let timeRepair = repairTime > Date.now() ? Math.floor((((repairTime - Date.now()) / 1000) / 60)) : 0
     if (timeRepair > 0) {
       return (Math.floor((timeRepair / maxTimeRepair) * 100))
     } else {
@@ -138,16 +140,16 @@ export default function CardRoad(props: CardRoadProps) {
 
   const countTimeWithdraw = () => {
     let maxTimeWithdraw = 0
-    if (name === 'Silver') {
+    if (name === 'Common') {
       maxTimeWithdraw = 9
     } else
-      if (name === 'Gold') {
+      if (name === 'Rare') {
         maxTimeWithdraw = 7
       } else
-        if (name === 'Ruby') {
+        if (name === 'Epic') {
           maxTimeWithdraw = 5
         }
-    let timeWithdraw = withdrawTime > Date.now() ? Math.floor((((withdrawTime - Date.now()) / 1000) / 86400)) : 0
+    let timeWithdraw = withdrawTime > Date.now() ? Math.floor((((withdrawTime - Date.now()) / 1000) / 60)) : 0
     if (timeWithdraw > 0) {
       return (Math.floor((timeWithdraw / maxTimeWithdraw) * 100))
     } else {
@@ -192,8 +194,8 @@ export default function CardRoad(props: CardRoadProps) {
                 <Image
                   src={imgTruck}
                   alt="icon-dashboard"
-                  width={95}
-                  height={95}
+                  width={150}
+                  height={150}
                 />
               }
             </div>

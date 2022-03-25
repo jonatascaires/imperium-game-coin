@@ -14,7 +14,6 @@ export default function EarningsSimulation(props: EarningsSimulationProps) {
 
   const options = props.language === 'en' ? en : br
 
-  console.log(props.selectOption)
   const [selectedOption, setSelectedOption] = useState(props.selectOption)
 
   useEffect(() => {

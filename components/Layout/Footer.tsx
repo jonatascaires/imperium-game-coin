@@ -19,12 +19,21 @@ export default function Footer(props: FooterProps) {
       </div>
       <div className="flex flex-col gap-0.5 text-base cursor-pointer" onClick={() => props.setActivePage(5)}>
         <Image
-          src={`/game-img/menu-staking.svg`}
+          src={`/game-img/savings.svg`}
           alt="icon-dashboard"
           width={25}
           height={25}
         />
         <span className="text-lg font-PassionOne">{props.language === 'en' ? 'Savings' : 'Poupança'}</span>
+      </div>
+      <div className="flex flex-col gap-0.5 text-base cursor-pointer" onClick={() => props.setActivePage(12)}>
+        <Image
+          src={`/game-img/menu-staking.svg`}
+          alt="icon-dashboard"
+          width={25}
+          height={25}
+        />
+        <span className="text-lg font-PassionOne">{props.language === 'en' ? 'Presale' : 'Pré-venda'}</span>
       </div>
     </div>
   )

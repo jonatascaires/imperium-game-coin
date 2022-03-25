@@ -28,7 +28,7 @@ export default function CardShop(props: CardShopProps) {
     reward = 6
     repair = 114
     value = 600
-    img = "/game-img/ruby-truck.svg"
+    img = "/game-img/NFT/epic-1.png"
   } else
     if (props.truckOption === 2) {
       truckName = props.language === 'en' ? "Rare" : 'Raro'
@@ -36,14 +36,14 @@ export default function CardShop(props: CardShopProps) {
       reward = 8
       repair = 144
       value = 250
-      img = "/game-img/gold-truck.svg"
+      img = "/game-img/NFT/rare-1.png"
     } else {
       truckName = props.language === 'en' ? "Common" : "Comum"
       fuel = 9
       reward = 10
       repair = 150
       value = 100
-      img = "/game-img/silver-truck.svg"
+      img = "/game-img/NFT/common-1.png"
     }
 
   const [loading, setLoading] = useState(false)

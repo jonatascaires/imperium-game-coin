@@ -1,8 +1,14 @@
 import Image from "next/image";
 import Notify from "../Notify";
+let Web3 = require('web3');
+import BuyButton from "../Buttons/BuyButton"
+import { useEffect, useState } from "react";
 
 interface PresaleProps {
   setActivePage: (v: number) => void
+  contract: any
+  address: string
+  checkBalance: () => void
   language?: string
 }
 
@@ -12,13 +18,37 @@ export default function Presale(props: PresaleProps) {
 
   const officialAddress = '0xdA8e0fDd998c51D9b59aE543D713b7Ec33C28f77'
 
+  const [qtdPresale, setQtdPresale] = useState(0);
+  const [qtdAmountCollected, setQtdAmountCollected] = useState(0);
+
+  const [renderAgain, setRenderAgain] = useState(0)
+
+  useEffect(() => {
+    props.contract.methods.qtdPresale().call().then((qtdPresale: number) => {
+      setQtdPresale(qtdPresale / 100000000)
+    }).catch((err: any) => console.log(err))
+    props.contract.methods.amountCollected().call().then((qtdAmountCollected: number) => {
+      setQtdAmountCollected(qtdAmountCollected / 100000000)
+    }).catch((err: any) => console.log(err))
+  }, [renderAgain])
+
+  function buyToken() {
+    props.contract.methods.buyToken().send({ from: props.address, value: Web3.utils.toWei("0.1", "ether") }).then((resp: any) => {
+      notify(resp.events.EventBuy.returnValues.message, 'success')
+      props.checkBalance()
+      setRenderAgain(Math.random())
+    }).catch((err: any) => {
+      notify(err.message, 'error')
+    })
+  }
+
   return (
     <div className="text-left px-3">
       <div className="flex items-center gap-3">
-        <div onClick={() => props.setActivePage(0)}>
+        <div onClick={() => props.setActivePage(1)}>
           <Image
-            src={`/game-img/close.svg`}
-            alt="icon-dashboard"
+            src={`/game-img/back.svg`}
+            alt="icon-back"
             width={14}
             height={24}
             className="cursor-pointer"
@@ -29,26 +59,25 @@ export default function Presale(props: PresaleProps) {
       <div className="mt-3 text-justify flex flex-col gap-4 font-PassionOne p-3">
         <div>
           {props.language === 'en' ? 'IGC token pre-sales are open.' : 'As pré-vendas do token IGC estão abertas. '}
-          {props.language === 'en' ? 'A total of 1,000,000 tokens were earmarked for sales at a fixed price of ' : 'Um total de 1.000.000 de tokens foram destinados para vendas a um preço fixo de '} <span className="text-yellow-400">0.10 BUSD</span>.
+          {props.language === 'en' ? `A total of 2,000,000 tokens were earmarked for sales at a fixed price of ` : `Um total de 2.000.000 de tokens foram destinados para vendas a um preço fixo de `} <span className="text-yellow-400">0.005 MATIC</span>.
         </div>
-        {/* <div>
-          We currently have available:
+        <div>
+          {props.language === 'en' ? 'We currently have available:' : 'No momento temos disponível:'}
         </div>
         <div className="text-4xl text-center text-yellow-400">
-          995,000 IGC
-        </div> */}
-        {/* <div>
-          100% of the amount raised from the pre-sale of the tokens will be used to provide more liquidity on the IGC listing on PancakeSwap.
-        </div> */}
-        <div>
-          {props.language === 'en' ? 'All BUSD or BNB amounts sent to this official address:' : 'Todos os valores de BUSD ou BNB enviados para este endereço oficial:'}
-        </div>
-        <div className="text-xl text-center text-yellow-400 cursor-pointer"
-          onClick={() => { navigator.clipboard.writeText(officialAddress), notify('Official address for the purchase of the copied IGC.', 'success') }}>
-          {officialAddress}
+          {`${qtdPresale} IGC`}
         </div>
         <div>
-          {props.language === 'en' ? 'You will receive the IGC back at the same Metamask address you sent the BUSD or BNB from.' : 'Você receberá o IGC de volta no mesmo endereço Metamask do qual enviou o BUSD ou BNB.'}
+          {props.language === 'en' ? 'Total amount in MATIC collected:' : 'Valor total em MATIC arrecadado:'}
+        </div>
+        <div className="text-4xl text-center text-yellow-400">
+          {`${qtdAmountCollected / 10000000000} MATIC`}
+        </div>
+        <div>
+          {props.language === 'en' ? '100% of the amount raised from the pre-sale of the tokens will be used to provide more liquidity on the IGC listing.' : '100% do valor arrecadado com a pré-venda dos tokens será usado para fornecer mais liquidez na listagem do IGC.'}
+        </div>
+        <div className="w-full flex justify-center mt-2">
+          <BuyButton action={() => buyToken()} className="animate-pulse">{props.language === 'en' ? 'Buy Token' : 'Comprar Token'}</BuyButton>
         </div>
       </div>
     </div>

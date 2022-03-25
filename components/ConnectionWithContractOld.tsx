@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 let Web3 = require('web3');
-import ImperiumTruck from "../abi/ImperiumTruck";
+import ImperiumTruck from "../abi/ImperiumTruckOld";
 
 export default function ConnectionWithContract(connectMetamask: number) {
 
@@ -9,7 +9,7 @@ export default function ConnectionWithContract(connectMetamask: number) {
   const [notifyMsg, setNotifyMsg] = useState([])
   const [addressUser, setAddressUser] = useState('')
 
-  const contractAddress = "0x667dC575c8Dc90eb20BDC515ccce1C2AD3B1a9bE"
+  const contractAddress = "0x5B194CDd962E57aCfF90AA41F4c9153eEB3b6502"
 
   useEffect(() => {
     if (connectMetamask > 0) {

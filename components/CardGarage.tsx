@@ -13,6 +13,9 @@ interface CardGarageProps {
 
 export default function CardGarage(props: CardGarageProps) {
 
+  //time testnet = 60
+  //time mainnet = 86400
+
   const [name, setName] = useState("")
   const [uniqueId, setUniqueId] = useState(0)
   const [level, setLevel] = useState(0)
@@ -28,13 +31,13 @@ export default function CardGarage(props: CardGarageProps) {
   const [loadingPage, setLoadingPage] = useState(true)
 
   let imgTruck = '/game-img/silver-truck.svg'
-  if (name == 'Silver') {
+  if (name == 'Common') {
     imgTruck = `/game-img/silver-truck.svg`
   } else
-    if (name == 'Gold') {
+    if (name == 'Rare') {
       imgTruck = `/game-img/gold-truck.svg`
     } else
-      if (name == 'Ruby') {
+      if (name == 'Epic') {
         imgTruck = `/game-img/ruby-truck.svg`
       }
 
@@ -102,16 +105,16 @@ export default function CardGarage(props: CardGarageProps) {
 
   const countTimeToFuel = () => {
     let maxTimeFuel = 0
-    if (name === 'Silver') {
+    if (name === 'Common') {
       maxTimeFuel = 9
     } else
-      if (name === 'Gold') {
+      if (name === 'Rare') {
         maxTimeFuel = 7
       } else
-        if (name === 'Ruby') {
+        if (name === 'Epic') {
           maxTimeFuel = 5
         }
-    let timeFuel = fuelTime > Date.now() ? Math.floor((((fuelTime - Date.now()) / 1000) / 86400)) : 0
+    let timeFuel = fuelTime > Date.now() ? Math.floor((((fuelTime - Date.now()) / 1000) / 60)) : 0
     if (timeFuel > 0) {
       return (Math.floor((timeFuel / maxTimeFuel) * 100))
     } else {
@@ -121,16 +124,16 @@ export default function CardGarage(props: CardGarageProps) {
 
   const countTimeRepair = () => {
     let maxTimeRepair = 0
-    if (name === 'Silver') {
+    if (name === 'Common') {
       maxTimeRepair = 150
     } else
-      if (name === 'Gold') {
+      if (name === 'Rare') {
         maxTimeRepair = 144
       } else
-        if (name === 'Ruby') {
+        if (name === 'Epic') {
           maxTimeRepair = 114
         }
-    let timeRepair = repairTime > Date.now() ? Math.floor((((repairTime - Date.now()) / 1000) / 86400)) : 0
+    let timeRepair = repairTime > Date.now() ? Math.floor((((repairTime - Date.now()) / 1000) / 60)) : 0
     if (timeRepair > 0) {
       return (Math.floor((timeRepair / maxTimeRepair) * 100))
     } else {
