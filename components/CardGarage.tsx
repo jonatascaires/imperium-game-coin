@@ -30,15 +30,15 @@ export default function CardGarage(props: CardGarageProps) {
 
   const [loadingPage, setLoadingPage] = useState(true)
 
-  let imgTruck = '/game-img/silver-truck.svg'
+  let imgTruck = `/game-img/NFT/common-1.svg`
   if (name == 'Common') {
-    imgTruck = `/game-img/silver-truck.svg`
+    imgTruck = `/game-img/NFT/common-${level}.svg`
   } else
     if (name == 'Rare') {
-      imgTruck = `/game-img/gold-truck.svg`
+      imgTruck = `/game-img/NFT/rare-${level}.svg`
     } else
       if (name == 'Epic') {
-        imgTruck = `/game-img/ruby-truck.svg`
+        imgTruck = `/game-img/NFT/epic-${level}.svg`
       }
 
   useEffect(() => {

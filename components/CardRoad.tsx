@@ -31,13 +31,13 @@ export default function CardRoad(props: CardRoadProps) {
 
   let imgTruck = '/game-img/NFT/common-1.png'
   if (name == 'Common') {
-    imgTruck = `/game-img/NFT/common-${level}.png`
+    imgTruck = `/game-img/NFT/common-${level}.svg`
   } else
     if (name == 'Rare') {
-      imgTruck = `/game-img/NFT/rare-${level}.png`
+      imgTruck = `/game-img/NFT/rare-${level}.svg`
     } else
       if (name == 'Epic') {
-        imgTruck = `/game-img/NFT/epic-${level}.png`
+        imgTruck = `/game-img/NFT/epic-${level}.svg`
       }
 
   useEffect(() => {

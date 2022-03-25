@@ -174,6 +174,7 @@ export default function Index() {
         <div className="hidden sm:block cursor-pointer animate-pulse opacity-80 hover:opacity-100" onClick={() => (setActivePage(9), setSelectOption(language === 'en' ? 'Tokenomics' : 'Tokenomics'))}>{language === 'en' ? 'Tokenomics' : 'Tokenomics'}</div>
         <div className="hidden sm:block cursor-pointer animate-pulse opacity-80 hover:opacity-100" onClick={() => (setActivePage(10), setSelectOption(language === 'en' ? 'Roadmap for 2022' : 'Roteiro para 2022'))}>{language === 'en' ? 'Roadmap' : 'Roteiro'}</div>
         <div className="hidden sm:block cursor-pointer animate-pulse opacity-80 hover:opacity-100" onClick={() => (setActivePage(11), setSelectOption(language === 'en' ? 'CEO | Developer' : 'CEO | Desenvolvedor'))}>{language === 'en' ? 'Team' : 'Equipe'}</div>
+        <a href="https://imperiumtruck.com"><div className="hidden sm:block cursor-pointer animate-pulse opacity-80 hover:opacity-100">{language === 'en' ? 'Beta version' : 'Versão beta'}</div></a>
       </div>
       <div className="flex absolute top-3 right-2 h-8 gap-2">
         <div className={`${language === 'en' ? 'opacity-100' : 'opacity-25'} hover:opacity-100 cursor-pointer`}
