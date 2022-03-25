@@ -19,6 +19,7 @@ import EarningsSimulation from '../components/Play/EarningsSimulation';
 import Team from '../components/Play/Team';
 import Tokenomics from '../components/Play/Tokenomics';
 import Roadmap from '../components/Play/Roadmap';
+let Web3 = require('web3');
 
 declare global {
   interface Window {
@@ -27,6 +28,34 @@ declare global {
 }
 
 export default function Index() {
+
+  async function changeNetwork() {
+    const chainId = 80001 // Polygon Testnet
+
+    if (window.ethereum.networkVersion !== chainId) {
+      try {
+        await window.ethereum.request({
+          method: 'wallet_switchEthereumChain',
+          params: [{ chainId: Web3.utils.toHex(chainId) }],
+        });
+      } catch (err) {
+        // This error code indicates that the chain has not been added to MetaMask.
+        if (err.code === 4902) {
+          await window.ethereum.request({
+            method: 'wallet_addEthereumChain',
+            params: [
+              {
+                chainName: 'Polygon Testnet',
+                chainId: Web3.utils.toHex(chainId),
+                nativeCurrency: { name: 'MATIC', decimals: 18, symbol: 'MATIC' },
+                rpcUrls: ['https://matic-mumbai.chainstacklabs.com'],
+              },
+            ],
+          });
+        }
+      }
+    }
+  }
 
   const cookies = parseCookies()
 
@@ -174,6 +203,8 @@ export default function Index() {
         <div className="hidden sm:block cursor-pointer animate-pulse opacity-80 hover:opacity-100" onClick={() => (setActivePage(9), setSelectOption(language === 'en' ? 'Tokenomics' : 'Tokenomics'))}>{language === 'en' ? 'Tokenomics' : 'Tokenomics'}</div>
         <div className="hidden sm:block cursor-pointer animate-pulse opacity-80 hover:opacity-100" onClick={() => (setActivePage(10), setSelectOption(language === 'en' ? 'Roadmap for 2022' : 'Roteiro para 2022'))}>{language === 'en' ? 'Roadmap' : 'Roteiro'}</div>
         <div className="hidden sm:block cursor-pointer animate-pulse opacity-80 hover:opacity-100" onClick={() => (setActivePage(11), setSelectOption(language === 'en' ? 'CEO | Developer' : 'CEO | Desenvolvedor'))}>{language === 'en' ? 'Team' : 'Equipe'}</div>
+        <div className="hidden sm:block cursor-pointer animate-pulse opacity-80 hover:opacity-100" onClick={() => changeNetwork()}>{language === 'en' ? 'Change or add network' : 'Mudar ou adicionar rede'}</div>
+        <a href="https://faucet.polygon.technology/" target="_blank" rel="noopener noreferrer"><div className="hidden sm:block cursor-pointer animate-pulse opacity-80 hover:opacity-100">{language === 'en' ? 'Faucet' : 'Faucet'}</div></a>
         <a href="https://imperiumtruck.com/old"><div className="hidden sm:block cursor-pointer animate-pulse opacity-80 hover:opacity-100">{language === 'en' ? 'Old Contract' : 'Contrato antigo'}</div></a>
       </div>
       <div className="flex absolute top-3 right-2 h-8 gap-2">
