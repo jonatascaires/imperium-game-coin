@@ -38,7 +38,7 @@ export default function Index() {
           method: 'wallet_switchEthereumChain',
           params: [{ chainId: Web3.utils.toHex(chainId) }],
         });
-      } catch (err) {
+      } catch (err:any) {
         // This error code indicates that the chain has not been added to MetaMask.
         if (err.code === 4902) {
           await window.ethereum.request({
