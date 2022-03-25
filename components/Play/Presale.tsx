@@ -74,7 +74,7 @@ export default function Presale(props: PresaleProps) {
           {`${qtdAmountCollected / 10000000000} MATIC`}
         </div>
         <div>
-          {props.language === 'en' ? '100% of the amount raised from the pre-sale of the tokens will be used to provide more liquidity on the IGC listing.' : '100% do valor arrecadado com a pré-venda dos tokens será usado para fornecer mais liquidez na listagem do IGC.'}
+          {props.language === 'en' ? '100% of the amount raised from the pre-sale of the tokens will be used to provide liquidity on the IGC listing.' : '100% do valor arrecadado com a pré-venda dos tokens será usado para fornecer liquidez na listagem do IGC.'}
         </div>
         <div className="w-full flex justify-center mt-2">
           <BuyButton action={() => buyToken()} className="animate-pulse">{props.language === 'en' ? 'Buy Token' : 'Comprar Token'}</BuyButton>
