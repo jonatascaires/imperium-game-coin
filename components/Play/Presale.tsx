@@ -61,7 +61,7 @@ export default function Presale(props: PresaleProps) {
       <div className="mt-3 text-justify flex flex-col gap-4 font-PassionOne p-3">
         <div>
           {props.language === 'en' ? 'IGC token pre-sales are open.' : 'As pré-vendas do token IGC estão abertas. '}
-          {props.language === 'en' ? `A total of 2,000,000 tokens were earmarked for sales at a fixed price of ` : `Um total de 2.000.000 de tokens foram destinados para vendas a um preço fixo de `} <span className="text-yellow-400">0.005 MATIC</span>.
+          {props.language === 'en' ? `A total of 2,000,000 tokens were earmarked for sales at a fixed price of ` : `Um total de 2.000.000 de tokens foram destinados para vendas a um preço fixo de `} <span className="text-yellow-400">0.0005 MATIC</span>.
         </div>
         <div>
           {props.language === 'en' ? 'We currently have available:' : 'No momento temos disponível:'}
