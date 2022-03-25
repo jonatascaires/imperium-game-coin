@@ -30,7 +30,7 @@ declare global {
 export default function Index() {
 
   async function changeNetwork() {
-    const chainId = 80001 // Polygon Testnet
+    const chainId = 56 // Polygon Testnet
 
     if (window.ethereum.networkVersion !== chainId) {
       try {
@@ -48,7 +48,7 @@ export default function Index() {
                 chainName: 'Polygon Testnet',
                 chainId: Web3.utils.toHex(chainId),
                 nativeCurrency: { name: 'MATIC', decimals: 18, symbol: 'MATIC' },
-                rpcUrls: ['https://matic-mumbai.chainstacklabs.com'],
+                rpcUrls: ['https://bsc-dataseed.binance.org/'],
               },
             ],
           });

@@ -203,7 +203,7 @@ export default function Index() {
         <div className="hidden sm:block cursor-pointer animate-pulse opacity-80 hover:opacity-100" onClick={() => (setActivePage(9), setSelectOption(language === 'en' ? 'Tokenomics' : 'Tokenomics'))}>{language === 'en' ? 'Tokenomics' : 'Tokenomics'}</div>
         <div className="hidden sm:block cursor-pointer animate-pulse opacity-80 hover:opacity-100" onClick={() => (setActivePage(10), setSelectOption(language === 'en' ? 'Roadmap for 2022' : 'Roteiro para 2022'))}>{language === 'en' ? 'Roadmap' : 'Roteiro'}</div>
         <div className="hidden sm:block cursor-pointer animate-pulse opacity-80 hover:opacity-100" onClick={() => (setActivePage(11), setSelectOption(language === 'en' ? 'CEO | Developer' : 'CEO | Desenvolvedor'))}>{language === 'en' ? 'Team' : 'Equipe'}</div>
-        <div className="hidden sm:block cursor-pointer animate-pulse opacity-80 hover:opacity-100" onClick={() => changeNetwork()}>{language === 'en' ? 'Change or add network' : 'Mudar ou adicionar rede'}</div>
+        <div className="hidden sm:block cursor-pointer animate-pulse opacity-80 hover:opacity-100" onClick={() => changeNetwork()}>{language === 'en' ? 'Change network' : 'Mudar de rede'}</div>
         <a href="https://faucet.polygon.technology/" target="_blank" rel="noopener noreferrer"><div className="hidden sm:block cursor-pointer animate-pulse opacity-80 hover:opacity-100">{language === 'en' ? 'Faucet' : 'Faucet'}</div></a>
         <a href="https://imperiumtruck.com/old"><div className="hidden sm:block cursor-pointer animate-pulse opacity-80 hover:opacity-100">{language === 'en' ? 'Old Contract' : 'Contrato antigo'}</div></a>
       </div>
