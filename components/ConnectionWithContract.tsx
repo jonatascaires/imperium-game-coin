@@ -9,7 +9,7 @@ export default function ConnectionWithContract(connectMetamask: number) {
   const [notifyMsg, setNotifyMsg] = useState([])
   const [addressUser, setAddressUser] = useState('')
 
-  const contractAddress = "0x667dC575c8Dc90eb20BDC515ccce1C2AD3B1a9bE"
+  const contractAddress = "0xB6af0f2cFd21Ea226ACD8e63d3Aeea70A2d143Df"
 
   useEffect(() => {
     if (connectMetamask > 0) {
