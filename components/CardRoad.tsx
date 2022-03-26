@@ -9,12 +9,17 @@ interface CardRoadProps {
   checkBalance: () => void
   address: string
   language?: string
+  contractAddress?: string
 }
 
 export default function CardRoad(props: CardRoadProps) {
 
-  //time testnet = 60
-  //time mainnet = 86400
+  let time = 0;
+  if(props.contractAddress == '0x5B194CDd962E57aCfF90AA41F4c9153eEB3b6502'){
+    time = 86400;
+  } else {
+    time = 60
+  }
 
   const [name, setName] = useState("")
   const [uniqueId, setUniqueId] = useState(0)
@@ -29,14 +34,14 @@ export default function CardRoad(props: CardRoadProps) {
 
   const [loadingPage, setLoadingPage] = useState(true)
 
-  let imgTruck = '/game-img/NFT/common-1.png'
-  if (name == 'Common') {
+  let imgTruck = '/game-img/NFT/common-1.svg'
+  if (name == 'Common' || name == 'Silver') {
     imgTruck = `/game-img/NFT/common-${level}.svg`
   } else
-    if (name == 'Rare') {
+    if (name == 'Rare' || name == 'Gold') {
       imgTruck = `/game-img/NFT/rare-${level}.svg`
     } else
-      if (name == 'Epic') {
+      if (name == 'Epic' || name == 'Ruby') {
         imgTruck = `/game-img/NFT/epic-${level}.svg`
       }
 
@@ -90,28 +95,28 @@ export default function CardRoad(props: CardRoadProps) {
   }
 
   let withdrawValue = 0
-  if (name == 'Common') {
+  if (name == 'Common' || name == 'Silver') {
     withdrawValue = 75 * level
   } else
-    if (name == 'Rare') {
+    if (name == 'Rare' || name == 'Gold') {
       withdrawValue = 105 * level
     } else
-      if (name == 'Epic') {
+      if (name == 'Epic' || name == 'Ruby') {
         withdrawValue = 155 * level
       }
 
   const countTimeToFuel = () => {
     let maxTimeFuel = 0
-    if (name === 'Common') {
+    if (name === 'Common' || name == 'Silver') {
       maxTimeFuel = 9
     } else
-      if (name === 'Rare') {
+      if (name === 'Rare' || name == 'Gold') {
         maxTimeFuel = 7
       } else
-        if (name === 'Epic') {
+        if (name === 'Epic' || name == 'Ruby') {
           maxTimeFuel = 5
         }
-    let timeFuel = fuelTime > Date.now() ? Math.floor((((fuelTime - Date.now()) / 1000) / 60)) : 0
+    let timeFuel = fuelTime > Date.now() ? Math.floor((((fuelTime - Date.now()) / 1000) / time)) : 0
     if (timeFuel > 0) {
       return (Math.floor((timeFuel / maxTimeFuel) * 100))
     } else {
@@ -121,16 +126,16 @@ export default function CardRoad(props: CardRoadProps) {
 
   const countTimeRepair = () => {
     let maxTimeRepair = 0
-    if (name === 'Common') {
+    if (name === 'Common' || name == 'Silver') {
       maxTimeRepair = 150
     } else
-      if (name === 'Rare') {
+      if (name === 'Rare' || name == 'Gold') {
         maxTimeRepair = 144
       } else
-        if (name === 'Epic') {
+        if (name === 'Epic' || name == 'Ruby') {
           maxTimeRepair = 114
         }
-    let timeRepair = repairTime > Date.now() ? Math.floor((((repairTime - Date.now()) / 1000) / 60)) : 0
+    let timeRepair = repairTime > Date.now() ? Math.floor((((repairTime - Date.now()) / 1000) / time)) : 0
     if (timeRepair > 0) {
       return (Math.floor((timeRepair / maxTimeRepair) * 100))
     } else {
@@ -140,16 +145,16 @@ export default function CardRoad(props: CardRoadProps) {
 
   const countTimeWithdraw = () => {
     let maxTimeWithdraw = 0
-    if (name === 'Common') {
+    if (name === 'Common' || name == 'Silver') {
       maxTimeWithdraw = 9
     } else
-      if (name === 'Rare') {
+      if (name === 'Rare' || name == 'Gold') {
         maxTimeWithdraw = 7
       } else
-        if (name === 'Epic') {
+        if (name === 'Epic' || name == 'Ruby') {
           maxTimeWithdraw = 5
         }
-    let timeWithdraw = withdrawTime > Date.now() ? Math.floor((((withdrawTime - Date.now()) / 1000) / 60)) : 0
+    let timeWithdraw = withdrawTime > Date.now() ? Math.floor((((withdrawTime - Date.now()) / 1000) / time)) : 0
     if (timeWithdraw > 0) {
       return (Math.floor((timeWithdraw / maxTimeWithdraw) * 100))
     } else {

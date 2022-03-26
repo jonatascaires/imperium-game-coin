@@ -6,6 +6,7 @@ interface StakingRecoverProps {
   address: string
   checkBalance: () => void
   language?: string
+  contractAddress?: string
 }
 
 export default function StakingRescue(props: StakingRecoverProps) {
@@ -20,7 +21,7 @@ export default function StakingRescue(props: StakingRecoverProps) {
 
   function renderSavings() {
     return idStaking.map((id, index) => {
-      return <CardStaking id={id} contract={props.contract} address={props.address} checkBalance={props.checkBalance} key={index} language={props.language} />
+      return <CardStaking id={id} contract={props.contract} address={props.address} checkBalance={props.checkBalance} key={index} language={props.language} contractAddress={props.contractAddress} />
     })
   }
 

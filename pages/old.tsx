@@ -136,10 +136,10 @@ export default function Index() {
         return <div className="overflow-y-auto h-[350px] my-3 animate__animated animate__fadeIn"><Shop contract={contract} address={address} code={code} checkBalance={checkBalance} language={language} /></div>
 
       case 2:
-        return <div className="overflow-y-auto h-[350px] my-3 animate__animated animate__fadeIn"><Garage contract={contract} address={address} checkBalance={checkBalance} language={language} /></div>
+        return <div className="overflow-y-auto h-[350px] my-3 animate__animated animate__fadeIn"><Garage contract={contract} address={address} checkBalance={checkBalance} language={language} contractAddress={contractAddress} /></div>
 
       case 3:
-        return <div className="overflow-y-auto h-[350px] my-3 animate__animated animate__fadeIn"><Road contract={contract} address={address} checkBalance={checkBalance} language={language} /></div>
+        return <div className="overflow-y-auto h-[350px] my-3 animate__animated animate__fadeIn"><Road contract={contract} address={address} checkBalance={checkBalance} language={language} contractAddress={contractAddress} /></div>
 
       case 4:
         return <div className="overflow-y-auto h-[350px] my-3 animate__animated animate__fadeIn"><Affiliates contract={contract} address={address} checkBalance={checkBalance} language={language} /></div>
@@ -148,7 +148,7 @@ export default function Index() {
         return <div className="overflow-y-auto h-[571px] my-3 animate__animated animate__fadeIn"><Staking contract={contract} address={address} checkBalance={checkBalance} language={language} /></div>
 
       case 6:
-        return <div className="overflow-y-auto h-[571px] my-3 animate__animated animate__fadeIn"><StakingRescue contract={contract} address={address} checkBalance={checkBalance} language={language} /></div>
+        return <div className="overflow-y-auto h-[571px] my-3 animate__animated animate__fadeIn"><StakingRescue contract={contract} address={address} checkBalance={checkBalance} language={language} contractAddress={contractAddress} /></div>
 
       case 7:
         return <div className="overflow-y-auto h-[675px] my-3 animate__animated animate__fadeIn"><Whitepaper setActivePage={setActivePage} selectOption={selectOption} language={language} /></div>
@@ -186,7 +186,7 @@ export default function Index() {
               }
               {renderContent()}
               {(activePage >= 1 && activePage <= 4) &&
-                <Footer setActivePage={setActivePage} language={language} />
+                <Footer setActivePage={setActivePage} language={language} contractAddress={contractAddress} />
               }
             </div>
           </div>

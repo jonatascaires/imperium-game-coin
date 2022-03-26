@@ -8,12 +8,17 @@ interface CardStakingProps {
   address: string
   checkBalance: () => void
   language?: string
+  contractAddress?: string
 }
 
 export default function CardStaking(props: CardStakingProps) {
 
-  //time testnet = 60
-  //time mainnet = 86400
+  let time = 0;
+  if(props.contractAddress == '0x5B194CDd962E57aCfF90AA41F4c9153eEB3b6502'){
+    time = 86400;
+  } else {
+    time = 60
+  }
 
   const notify = Notify()
 
@@ -70,7 +75,7 @@ export default function CardStaking(props: CardStakingProps) {
             if (apy == 50) {
               maxTimeLocked = 360
             }
-    let lockedTime = timeLocked > Date.now() ? Math.floor((((timeLocked - Date.now()) / 1000) / 60)) : 0
+    let lockedTime = timeLocked > Date.now() ? Math.floor((((timeLocked - Date.now()) / 1000) / time)) : 0
     if (lockedTime > 0) {
       return (Math.floor((lockedTime / maxTimeLocked) * 100))
     } else {
